@@ -1,0 +1,908 @@
+{
+  "experiments": [
+    {
+      "ma_period": 50,
+      "cagr": 18.15,
+      "final_value": 974318.64,
+      "max_drawdown": 9.74,
+      "nifty_cagr": 6.65,
+      "nifty_final": 646832.73,
+      "cash_months": 19,
+      "total_months": 48,
+      "whipsaws": 13,
+      "portfolio_values": [
+        {
+          "date": "2022-12-01",
+          "value": 500000.0,
+          "nifty_bnh": 500000.0,
+          "in_cash": false
+        },
+        {
+          "date": "2023-01-02",
+          "value": 492733.68,
+          "nifty_bnh": 484917.78,
+          "in_cash": true
+        },
+        {
+          "date": "2023-02-01",
+          "value": 492733.68,
+          "nifty_bnh": 469811.23,
+          "in_cash": true
+        },
+        {
+          "date": "2023-03-01",
+          "value": 492733.68,
+          "nifty_bnh": 465310.89,
+          "in_cash": true
+        },
+        {
+          "date": "2023-04-03",
+          "value": 492733.68,
+          "nifty_bnh": 463559.4,
+          "in_cash": true
+        },
+        {
+          "date": "2023-05-02",
+          "value": 492733.68,
+          "nifty_bnh": 482606.79,
+          "in_cash": false
+        },
+        {
+          "date": "2023-06-01",
+          "value": 488110.36,
+          "nifty_bnh": 493796.83,
+          "in_cash": false
+        },
+        {
+          "date": "2023-07-03",
+          "value": 496652.15,
+          "nifty_bnh": 516444.49,
+          "in_cash": false
+        },
+        {
+          "date": "2023-08-01",
+          "value": 509063.84,
+          "nifty_bnh": 528437.29,
+          "in_cash": false
+        },
+        {
+          "date": "2023-09-01",
+          "value": 509881.74,
+          "nifty_bnh": 521236.74,
+          "in_cash": false
+        },
+        {
+          "date": "2023-10-03",
+          "value": 490858.32,
+          "nifty_bnh": 524399.14,
+          "in_cash": true
+        },
+        {
+          "date": "2023-11-01",
+          "value": 490858.32,
+          "nifty_bnh": 510825.14,
+          "in_cash": true
+        },
+        {
+          "date": "2023-12-01",
+          "value": 490858.32,
+          "nifty_bnh": 544297.95,
+          "in_cash": false
+        },
+        {
+          "date": "2024-01-01",
+          "value": 508460.81,
+          "nifty_bnh": 584679.38,
+          "in_cash": false
+        },
+        {
+          "date": "2024-02-01",
+          "value": 518006.97,
+          "nifty_bnh": 583900.94,
+          "in_cash": false
+        },
+        {
+          "date": "2024-03-01",
+          "value": 545530.86,
+          "nifty_bnh": 600491.39,
+          "in_cash": false
+        },
+        {
+          "date": "2024-04-01",
+          "value": 554511.04,
+          "nifty_bnh": 603751.09,
+          "in_cash": false
+        },
+        {
+          "date": "2024-05-02",
+          "value": 583416.29,
+          "nifty_bnh": 610197.53,
+          "in_cash": false
+        },
+        {
+          "date": "2024-06-03",
+          "value": 598099.16,
+          "nifty_bnh": 627955.63,
+          "in_cash": false
+        },
+        {
+          "date": "2024-07-01",
+          "value": 606967.04,
+          "nifty_bnh": 652671.01,
+          "in_cash": false
+        },
+        {
+          "date": "2024-08-01",
+          "value": 610417.65,
+          "nifty_bnh": 677070.16,
+          "in_cash": false
+        },
+        {
+          "date": "2024-09-02",
+          "value": 609231.18,
+          "nifty_bnh": 684659.92,
+          "in_cash": false
+        },
+        {
+          "date": "2024-10-01",
+          "value": 627862.36,
+          "nifty_bnh": 701250.36,
+          "in_cash": false
+        },
+        {
+          "date": "2024-11-01",
+          "value": 573523.57,
+          "nifty_bnh": 662571.76,
+          "in_cash": true
+        },
+        {
+          "date": "2024-12-02",
+          "value": 573523.57,
+          "nifty_bnh": 660163.47,
+          "in_cash": true
+        },
+        {
+          "date": "2025-01-01",
+          "value": 573523.57,
+          "nifty_bnh": 646078.62,
+          "in_cash": true
+        },
+        {
+          "date": "2025-02-01",
+          "value": 573523.57,
+          "nifty_bnh": 637661.77,
+          "in_cash": true
+        },
+        {
+          "date": "2025-03-03",
+          "value": 573523.57,
+          "nifty_bnh": 603410.53,
+          "in_cash": true
+        },
+        {
+          "date": "2025-04-01",
+          "value": 573523.57,
+          "nifty_bnh": 631507.25,
+          "in_cash": false
+        },
+        {
+          "date": "2025-05-02",
+          "value": 566736.72,
+          "nifty_bnh": 661793.32,
+          "in_cash": false
+        },
+        {
+          "date": "2025-06-02",
+          "value": 577245.19,
+          "nifty_bnh": 675294.35,
+          "in_cash": false
+        },
+        {
+          "date": "2025-07-01",
+          "value": 588022.26,
+          "nifty_bnh": 697771.72,
+          "in_cash": false
+        },
+        {
+          "date": "2025-08-01",
+          "value": 597797.24,
+          "nifty_bnh": 674686.19,
+          "in_cash": true
+        },
+        {
+          "date": "2025-09-01",
+          "value": 597797.24,
+          "nifty_bnh": 676705.26,
+          "in_cash": true
+        },
+        {
+          "date": "2025-10-01",
+          "value": 597797.24,
+          "nifty_bnh": 682373.26,
+          "in_cash": false
+        },
+        {
+          "date": "2025-11-03",
+          "value": 610762.31,
+          "nifty_bnh": 708742.82,
+          "in_cash": false
+        },
+        {
+          "date": "2025-12-01",
+          "value": 682007.19,
+          "nifty_bnh": 720297.75,
+          "in_cash": false
+        },
+        {
+          "date": "2026-01-01",
+          "value": 794146.46,
+          "nifty_bnh": 718424.64,
+          "in_cash": false
+        },
+        {
+          "date": "2026-02-01",
+          "value": 905870.68,
+          "nifty_bnh": 686995.23,
+          "in_cash": true
+        },
+        {
+          "date": "2026-03-02",
+          "value": 905870.68,
+          "nifty_bnh": 685827.58,
+          "in_cash": true
+        },
+        {
+          "date": "2026-04-01",
+          "value": 905870.68,
+          "nifty_bnh": 626277.12,
+          "in_cash": true
+        },
+        {
+          "date": "2026-05-04",
+          "value": 905870.68,
+          "nifty_bnh": 664396.22,
+          "in_cash": false
+        },
+        {
+          "date": "2026-06-01",
+          "value": 962494.92,
+          "nifty_bnh": 645908.34,
+          "in_cash": true
+        },
+        {
+          "date": "2026-07-01",
+          "value": 962494.92,
+          "nifty_bnh": 663788.07,
+          "in_cash": false
+        },
+        {
+          "date": "2026-08-03",
+          "value": 958862.34,
+          "nifty_bnh": 680816.39,
+          "in_cash": false
+        },
+        {
+          "date": "2026-09-01",
+          "value": 974318.64,
+          "nifty_bnh": 664712.46,
+          "in_cash": true
+        },
+        {
+          "date": "2026-10-01",
+          "value": 974318.64,
+          "nifty_bnh": 623966.14,
+          "in_cash": true
+        },
+        {
+          "date": "2026-11-02",
+          "value": 974318.64,
+          "nifty_bnh": 646832.73,
+          "in_cash": false
+        }
+      ]
+    },
+    {
+      "ma_period": 100,
+      "cagr": 20.08,
+      "final_value": 1039410.24,
+      "max_drawdown": 8.65,
+      "nifty_cagr": 6.65,
+      "nifty_final": 646832.73,
+      "cash_months": 19,
+      "total_months": 48,
+      "whipsaws": 10,
+      "portfolio_values": [
+        {
+          "date": "2022-12-01",
+          "value": 500000.0,
+          "nifty_bnh": 500000.0,
+          "in_cash": false
+        },
+        {
+          "date": "2023-01-02",
+          "value": 492733.68,
+          "nifty_bnh": 484917.78,
+          "in_cash": false
+        },
+        {
+          "date": "2023-02-01",
+          "value": 489352.86,
+          "nifty_bnh": 469811.23,
+          "in_cash": true
+        },
+        {
+          "date": "2023-03-01",
+          "value": 489352.86,
+          "nifty_bnh": 465310.89,
+          "in_cash": true
+        },
+        {
+          "date": "2023-04-03",
+          "value": 489352.86,
+          "nifty_bnh": 463559.4,
+          "in_cash": true
+        },
+        {
+          "date": "2023-05-02",
+          "value": 489352.86,
+          "nifty_bnh": 482606.79,
+          "in_cash": false
+        },
+        {
+          "date": "2023-06-01",
+          "value": 484761.27,
+          "nifty_bnh": 493796.83,
+          "in_cash": false
+        },
+        {
+          "date": "2023-07-03",
+          "value": 493244.45,
+          "nifty_bnh": 516444.49,
+          "in_cash": false
+        },
+        {
+          "date": "2023-08-01",
+          "value": 505570.98,
+          "nifty_bnh": 528437.29,
+          "in_cash": false
+        },
+        {
+          "date": "2023-09-01",
+          "value": 506383.27,
+          "nifty_bnh": 521236.74,
+          "in_cash": false
+        },
+        {
+          "date": "2023-10-03",
+          "value": 487490.38,
+          "nifty_bnh": 524399.14,
+          "in_cash": false
+        },
+        {
+          "date": "2023-11-01",
+          "value": 479036.9,
+          "nifty_bnh": 510825.14,
+          "in_cash": true
+        },
+        {
+          "date": "2023-12-01",
+          "value": 479036.9,
+          "nifty_bnh": 544297.95,
+          "in_cash": false
+        },
+        {
+          "date": "2024-01-01",
+          "value": 496215.46,
+          "nifty_bnh": 584679.38,
+          "in_cash": false
+        },
+        {
+          "date": "2024-02-01",
+          "value": 505531.73,
+          "nifty_bnh": 583900.94,
+          "in_cash": false
+        },
+        {
+          "date": "2024-03-01",
+          "value": 532392.75,
+          "nifty_bnh": 600491.39,
+          "in_cash": false
+        },
+        {
+          "date": "2024-04-01",
+          "value": 541156.66,
+          "nifty_bnh": 603751.09,
+          "in_cash": false
+        },
+        {
+          "date": "2024-05-02",
+          "value": 569365.78,
+          "nifty_bnh": 610197.53,
+          "in_cash": false
+        },
+        {
+          "date": "2024-06-03",
+          "value": 583695.04,
+          "nifty_bnh": 627955.63,
+          "in_cash": false
+        },
+        {
+          "date": "2024-07-01",
+          "value": 592349.35,
+          "nifty_bnh": 652671.01,
+          "in_cash": false
+        },
+        {
+          "date": "2024-08-01",
+          "value": 595716.86,
+          "nifty_bnh": 677070.16,
+          "in_cash": false
+        },
+        {
+          "date": "2024-09-02",
+          "value": 594558.96,
+          "nifty_bnh": 684659.92,
+          "in_cash": false
+        },
+        {
+          "date": "2024-10-01",
+          "value": 612741.45,
+          "nifty_bnh": 701250.36,
+          "in_cash": false
+        },
+        {
+          "date": "2024-11-01",
+          "value": 559711.31,
+          "nifty_bnh": 662571.76,
+          "in_cash": true
+        },
+        {
+          "date": "2024-12-02",
+          "value": 559711.31,
+          "nifty_bnh": 660163.47,
+          "in_cash": true
+        },
+        {
+          "date": "2025-01-01",
+          "value": 559711.31,
+          "nifty_bnh": 646078.62,
+          "in_cash": true
+        },
+        {
+          "date": "2025-02-01",
+          "value": 559711.31,
+          "nifty_bnh": 637661.77,
+          "in_cash": true
+        },
+        {
+          "date": "2025-03-03",
+          "value": 559711.31,
+          "nifty_bnh": 603410.53,
+          "in_cash": true
+        },
+        {
+          "date": "2025-04-01",
+          "value": 559711.31,
+          "nifty_bnh": 631507.25,
+          "in_cash": true
+        },
+        {
+          "date": "2025-05-02",
+          "value": 559711.31,
+          "nifty_bnh": 661793.32,
+          "in_cash": false
+        },
+        {
+          "date": "2025-06-02",
+          "value": 570089.51,
+          "nifty_bnh": 675294.35,
+          "in_cash": false
+        },
+        {
+          "date": "2025-07-01",
+          "value": 580732.98,
+          "nifty_bnh": 697771.72,
+          "in_cash": false
+        },
+        {
+          "date": "2025-08-01",
+          "value": 590386.79,
+          "nifty_bnh": 674686.19,
+          "in_cash": false
+        },
+        {
+          "date": "2025-09-01",
+          "value": 643139.84,
+          "nifty_bnh": 676705.26,
+          "in_cash": false
+        },
+        {
+          "date": "2025-10-01",
+          "value": 741758.52,
+          "nifty_bnh": 682373.26,
+          "in_cash": true
+        },
+        {
+          "date": "2025-11-03",
+          "value": 741758.52,
+          "nifty_bnh": 708742.82,
+          "in_cash": false
+        },
+        {
+          "date": "2025-12-01",
+          "value": 828283.99,
+          "nifty_bnh": 720297.75,
+          "in_cash": false
+        },
+        {
+          "date": "2026-01-01",
+          "value": 964474.87,
+          "nifty_bnh": 718424.64,
+          "in_cash": false
+        },
+        {
+          "date": "2026-02-01",
+          "value": 1100161.69,
+          "nifty_bnh": 686995.23,
+          "in_cash": true
+        },
+        {
+          "date": "2026-03-02",
+          "value": 1100161.69,
+          "nifty_bnh": 685827.58,
+          "in_cash": true
+        },
+        {
+          "date": "2026-04-01",
+          "value": 1100161.69,
+          "nifty_bnh": 626277.12,
+          "in_cash": true
+        },
+        {
+          "date": "2026-05-04",
+          "value": 1100161.69,
+          "nifty_bnh": 664396.22,
+          "in_cash": true
+        },
+        {
+          "date": "2026-06-01",
+          "value": 1100161.69,
+          "nifty_bnh": 645908.34,
+          "in_cash": true
+        },
+        {
+          "date": "2026-07-01",
+          "value": 1100161.69,
+          "nifty_bnh": 663788.07,
+          "in_cash": true
+        },
+        {
+          "date": "2026-08-03",
+          "value": 1100161.69,
+          "nifty_bnh": 680816.39,
+          "in_cash": false
+        },
+        {
+          "date": "2026-09-01",
+          "value": 1117895.65,
+          "nifty_bnh": 664712.46,
+          "in_cash": false
+        },
+        {
+          "date": "2026-10-01",
+          "value": 1039410.24,
+          "nifty_bnh": 623966.14,
+          "in_cash": true
+        },
+        {
+          "date": "2026-11-02",
+          "value": 1039410.24,
+          "nifty_bnh": 646832.73,
+          "in_cash": true
+        }
+      ]
+    },
+    {
+      "ma_period": 200,
+      "cagr": 21.11,
+      "final_value": 1075694.09,
+      "max_drawdown": 14.7,
+      "nifty_cagr": 6.65,
+      "nifty_final": 646832.73,
+      "cash_months": 15,
+      "total_months": 48,
+      "whipsaws": 4,
+      "portfolio_values": [
+        {
+          "date": "2022-12-01",
+          "value": 500000.0,
+          "nifty_bnh": 500000.0,
+          "in_cash": false
+        },
+        {
+          "date": "2023-01-02",
+          "value": 492733.68,
+          "nifty_bnh": 484917.78,
+          "in_cash": false
+        },
+        {
+          "date": "2023-02-01",
+          "value": 489352.86,
+          "nifty_bnh": 469811.23,
+          "in_cash": false
+        },
+        {
+          "date": "2023-03-01",
+          "value": 463604.69,
+          "nifty_bnh": 465310.89,
+          "in_cash": false
+        },
+        {
+          "date": "2023-04-03",
+          "value": 470232.73,
+          "nifty_bnh": 463559.4,
+          "in_cash": true
+        },
+        {
+          "date": "2023-05-02",
+          "value": 470232.73,
+          "nifty_bnh": 482606.79,
+          "in_cash": false
+        },
+        {
+          "date": "2023-06-01",
+          "value": 465820.54,
+          "nifty_bnh": 493796.83,
+          "in_cash": false
+        },
+        {
+          "date": "2023-07-03",
+          "value": 473972.26,
+          "nifty_bnh": 516444.49,
+          "in_cash": false
+        },
+        {
+          "date": "2023-08-01",
+          "value": 485817.16,
+          "nifty_bnh": 528437.29,
+          "in_cash": false
+        },
+        {
+          "date": "2023-09-01",
+          "value": 486597.71,
+          "nifty_bnh": 521236.74,
+          "in_cash": false
+        },
+        {
+          "date": "2023-10-03",
+          "value": 468443.01,
+          "nifty_bnh": 524399.14,
+          "in_cash": false
+        },
+        {
+          "date": "2023-11-01",
+          "value": 460319.83,
+          "nifty_bnh": 510825.14,
+          "in_cash": false
+        },
+        {
+          "date": "2023-12-01",
+          "value": 490920.58,
+          "nifty_bnh": 544297.95,
+          "in_cash": false
+        },
+        {
+          "date": "2024-01-01",
+          "value": 508525.3,
+          "nifty_bnh": 584679.38,
+          "in_cash": false
+        },
+        {
+          "date": "2024-02-01",
+          "value": 518072.67,
+          "nifty_bnh": 583900.94,
+          "in_cash": false
+        },
+        {
+          "date": "2024-03-01",
+          "value": 545600.05,
+          "nifty_bnh": 600491.39,
+          "in_cash": false
+        },
+        {
+          "date": "2024-04-01",
+          "value": 554581.37,
+          "nifty_bnh": 603751.09,
+          "in_cash": false
+        },
+        {
+          "date": "2024-05-02",
+          "value": 583490.29,
+          "nifty_bnh": 610197.53,
+          "in_cash": false
+        },
+        {
+          "date": "2024-06-03",
+          "value": 598175.02,
+          "nifty_bnh": 627955.63,
+          "in_cash": false
+        },
+        {
+          "date": "2024-07-01",
+          "value": 607044.02,
+          "nifty_bnh": 652671.01,
+          "in_cash": false
+        },
+        {
+          "date": "2024-08-01",
+          "value": 610495.07,
+          "nifty_bnh": 677070.16,
+          "in_cash": false
+        },
+        {
+          "date": "2024-09-02",
+          "value": 609308.45,
+          "nifty_bnh": 684659.92,
+          "in_cash": false
+        },
+        {
+          "date": "2024-10-01",
+          "value": 627941.99,
+          "nifty_bnh": 701250.36,
+          "in_cash": false
+        },
+        {
+          "date": "2024-11-01",
+          "value": 573596.31,
+          "nifty_bnh": 662571.76,
+          "in_cash": false
+        },
+        {
+          "date": "2024-12-02",
+          "value": 540020.31,
+          "nifty_bnh": 660163.47,
+          "in_cash": false
+        },
+        {
+          "date": "2025-01-01",
+          "value": 535646.2,
+          "nifty_bnh": 646078.62,
+          "in_cash": true
+        },
+        {
+          "date": "2025-02-01",
+          "value": 535646.2,
+          "nifty_bnh": 637661.77,
+          "in_cash": true
+        },
+        {
+          "date": "2025-03-03",
+          "value": 535646.2,
+          "nifty_bnh": 603410.53,
+          "in_cash": true
+        },
+        {
+          "date": "2025-04-01",
+          "value": 535646.2,
+          "nifty_bnh": 631507.25,
+          "in_cash": true
+        },
+        {
+          "date": "2025-05-02",
+          "value": 535646.2,
+          "nifty_bnh": 661793.32,
+          "in_cash": false
+        },
+        {
+          "date": "2025-06-02",
+          "value": 545578.18,
+          "nifty_bnh": 675294.35,
+          "in_cash": false
+        },
+        {
+          "date": "2025-07-01",
+          "value": 555764.03,
+          "nifty_bnh": 697771.72,
+          "in_cash": false
+        },
+        {
+          "date": "2025-08-01",
+          "value": 565002.77,
+          "nifty_bnh": 674686.19,
+          "in_cash": false
+        },
+        {
+          "date": "2025-09-01",
+          "value": 615487.66,
+          "nifty_bnh": 676705.26,
+          "in_cash": false
+        },
+        {
+          "date": "2025-10-01",
+          "value": 709866.18,
+          "nifty_bnh": 682373.26,
+          "in_cash": false
+        },
+        {
+          "date": "2025-11-03",
+          "value": 725261.81,
+          "nifty_bnh": 708742.82,
+          "in_cash": false
+        },
+        {
+          "date": "2025-12-01",
+          "value": 809862.96,
+          "nifty_bnh": 720297.75,
+          "in_cash": false
+        },
+        {
+          "date": "2026-01-01",
+          "value": 943024.95,
+          "nifty_bnh": 718424.64,
+          "in_cash": false
+        },
+        {
+          "date": "2026-02-01",
+          "value": 1075694.09,
+          "nifty_bnh": 686995.23,
+          "in_cash": true
+        },
+        {
+          "date": "2026-03-02",
+          "value": 1075694.09,
+          "nifty_bnh": 685827.58,
+          "in_cash": true
+        },
+        {
+          "date": "2026-04-01",
+          "value": 1075694.09,
+          "nifty_bnh": 626277.12,
+          "in_cash": true
+        },
+        {
+          "date": "2026-05-04",
+          "value": 1075694.09,
+          "nifty_bnh": 664396.22,
+          "in_cash": true
+        },
+        {
+          "date": "2026-06-01",
+          "value": 1075694.09,
+          "nifty_bnh": 645908.34,
+          "in_cash": true
+        },
+        {
+          "date": "2026-07-01",
+          "value": 1075694.09,
+          "nifty_bnh": 663788.07,
+          "in_cash": true
+        },
+        {
+          "date": "2026-08-03",
+          "value": 1075694.09,
+          "nifty_bnh": 680816.39,
+          "in_cash": true
+        },
+        {
+          "date": "2026-09-01",
+          "value": 1075694.09,
+          "nifty_bnh": 664712.46,
+          "in_cash": true
+        },
+        {
+          "date": "2026-10-01",
+          "value": 1075694.09,
+          "nifty_bnh": 623966.14,
+          "in_cash": true
+        },
+        {
+          "date": "2026-11-02",
+          "value": 1075694.09,
+          "nifty_bnh": 646832.73,
+          "in_cash": true
+        }
+      ]
+    }
+  ],
+  "initial_capital": 500000
+}

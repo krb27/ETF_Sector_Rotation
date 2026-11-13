@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ETF Sector Rotation Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI",sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
+  :root{
+    --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--blue:#3b82f6;
+    --card:#1e2130;--border:#2d3148;--muted:#64748b;--accent:#6366f1
+  }
+
+  /* Header */
+  .header{background:linear-gradient(135deg,#1e2130 0%,#16213e 100%);border-bottom:1px solid var(--border);padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+  .header h1{font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-0.5px}
+  .header h1 span{color:var(--accent)}
+  .header .subtitle{font-size:0.8rem;color:var(--muted);margin-top:2px}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:0.75rem;font-weight:600}
+  .badge.bull{background:rgba(34,197,94,0.15);color:var(--green);border:1px solid rgba(34,197,94,0.3)}
+  .badge.bear{background:rgba(239,68,68,0.15);color:var(--red);border:1px solid rgba(239,68,68,0.3)}
+  .badge .dot{width:6px;height:6px;border-radius:50%;animation:pulse 2s infinite}
+  .badge.bull .dot{background:var(--green)}
+  .badge.bear .dot{background:var(--red)}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+  /* Layout */
+  .container{max-width:1300px;margin:0 auto;padding:24px 32px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:20px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+  @media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .card-title{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:12px;font-weight:600}
+  .stat-value{font-size:2rem;font-weight:700;line-height:1}
+  .stat-sub{font-size:0.78rem;color:var(--muted);margin-top:4px}
+  .stat-up{color:var(--green)}
+  .stat-down{color:var(--red)}
+  .stat-neutral{color:#e2e8f0}
+
+  /* Signal box */
+  .signal-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+  .signal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .signal-title{font-size:1.1rem;font-weight:600}
+  .signal-action{font-size:1rem;font-weight:700;padding:10px 20px;border-radius:8px;text-align:center}
+  .signal-action.invest{background:rgba(34,197,94,0.2);border:1px solid var(--green);color:var(--green)}
+  .signal-action.cash{background:rgba(239,68,68,0.2);border:1px solid var(--red);color:var(--red)}
+
+  /* Ranking table */
+  .rank-table{width:100%;border-collapse:collapse}
+  .rank-table th{text-align:left;padding:10px 14px;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);border-bottom:1px solid var(--border)}
+  .rank-table td{padding:12px 14px;border-bottom:1px solid rgba(45,49,72,0.5);font-size:0.9rem}
+  .rank-table tr:last-child td{border-bottom:none}
+  .rank-table tr.top{background:rgba(99,102,241,0.08)}
+  .rank-badge{display:inline-block;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:0.75rem;font-weight:700}
+  .rank-1{background:#f59e0b;color:#000}
+  .rank-2{background:#94a3b8;color:#000}
+  .rank-3{background:#cd7c4b;color:#fff}
+  .rank-other{background:#2d3148;color:#94a3b8}
+  .bar-wrap{background:#2d3148;border-radius:4px;height:6px;width:100px;display:inline-block;vertical-align:middle}
+  .bar-fill{height:6px;border-radius:4px;transition:width 0.5s ease}
+  .hold-tag{background:rgba(99,102,241,0.2);color:#a5b4fc;border:1px solid rgba(99,102,241,0.4);padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:600;margin-left:6px}
+  .ma-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:6px;font-size:0.78rem}
+  .ma-pill.above{background:rgba(34,197,94,0.12);color:var(--green)}
+  .ma-pill.below{background:rgba(239,68,68,0.12);color:var(--red)}
+
+  /* Chart */
+  .chart-wrap{position:relative;height:280px}
+
+  /* Rebalance log */
+  .log-wrap{max-height:400px;overflow-y:auto}
+  .log-entry{border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden}
+  .log-entry-header{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:#1a1d2e;user-select:none}
+  .log-entry-header:hover{background:#222640}
+  .log-entry-body{padding:14px 16px;border-top:1px solid var(--border);display:none;background:#181b2b}
+  .log-entry.open .log-entry-body{display:block}
+  .log-date{font-weight:600;font-size:0.88rem}
+  .log-value{font-size:0.88rem;color:var(--muted)}
+  .log-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .chip{padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:600}
+  .chip.hold{background:rgba(99,102,241,0.2);color:#a5b4fc}
+  .chip.added{background:rgba(34,197,94,0.2);color:var(--green)}
+  .chip.removed{background:rgba(239,68,68,0.2);color:var(--red)}
+  .chip.cash{background:rgba(245,158,11,0.2);color:var(--yellow)}
+  .mini-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:0.82rem}
+  .mini-table th{color:var(--muted);text-align:left;padding:4px 8px;font-size:0.7rem}
+  .mini-table td{padding:5px 8px;border-top:1px solid rgba(45,49,72,0.4)}
+
+  /* Upload zone */
+  .upload-zone{border:2px dashed var(--border);border-radius:12px;padding:32px;text-align:center;cursor:pointer;transition:all 0.2s;margin-bottom:20px}
+  .upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:rgba(99,102,241,0.05)}
+  .upload-zone p{color:var(--muted);font-size:0.88rem;margin-top:8px}
+  .upload-btn{display:inline-block;margin-top:12px;padding:8px 20px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer}
+  #fileInput{display:none}
+  .file-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;justify-content:center}
+  .file-tag{background:#2d3148;color:#94a3b8;padding:4px 10px;border-radius:4px;font-size:0.75rem}
+
+  /* Tabs */
+  .tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid var(--border)}
+  .tab{padding:10px 20px;font-size:0.85rem;font-weight:500;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:all 0.2s;margin-bottom:-1px}
+  .tab.active{color:#fff;border-bottom-color:var(--accent)}
+  .tab-pane{display:none}
+  .tab-pane.active{display:block}
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{width:5px;height:5px}
+  ::-webkit-scrollbar-track{background:#1e2130}
+  ::-webkit-scrollbar-thumb{background:#3d4166;border-radius:3px}
+
+  /* Run button */
+  .run-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:background 0.2s}
+  .run-btn:hover{background:#4f46e5}
+  .run-btn:disabled{background:#3d4166;cursor:not-allowed}
+
+  .info-row{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--muted);margin-top:6px}
+  .sep{width:1px;height:12px;background:var(--border)}
+  .loading{display:flex;align-items:center;justify-content:center;padding:40px;color:var(--muted);font-size:0.9rem}
+
+  .note{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px 16px;font-size:0.8rem;color:#fbbf24;margin-bottom:20px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>ETF Sector <span>Rotation</span> Dashboard</h1>
+    <div class="subtitle">Momentum-based ranking · Monthly rebalance · Nifty 200-MA filter</div>
+  </div>
+  <div id="marketBadge"></div>
+</div>
+
+<div class="container">
+
+  <!-- Upload / Load section -->
+  <div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+    <div style="font-size:2rem">📂</div>
+    <div style="font-weight:600;margin-top:6px">Drop NSE ETF CSVs here or click to browse</div>
+    <p>Upload CSVs downloaded from NSE (BankBees, GoldBees, AutoBees, SilverBees, NiftyBees, etc.)</p>
+    <div class="upload-btn">Choose Files</div>
+    <div class="file-list" id="fileList"></div>
+  </div>
+  <input type="file" id="fileInput" multiple accept=".csv,.json"/>
+
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+    <button class="run-btn" id="runBtn" onclick="runAnalysis()" disabled>
+      ▶ Run Analysis
+    </button>
+    <div style="font-size:0.82rem;color:var(--muted)">
+      Or load the pre-computed backtest:
+      <button onclick="loadResults()" style="background:none;border:1px solid var(--border);color:#94a3b8;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.8rem;margin-left:6px">Load results.json</button>
+    </div>
+    <div style="font-size:0.75rem;color:var(--muted)">
+      Top N: 
+      <select id="topN" onchange="rerenderIfLoaded()" style="background:#2d3148;color:#e2e8f0;border:1px solid var(--border);border-radius:4px;padding:3px 8px;margin-left:4px">
+        <option value="2" selected>2 ETFs (50/50)</option>
+        <option value="3">3 ETFs (33/33/33)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="dashboard" style="display:none">
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('signal',this)">Current Signal</div>
+      <div class="tab" onclick="switchTab('backtest',this)">Backtest Results</div>
+      <div class="tab" onclick="switchTab('log',this)">Rebalance Log</div>
+    </div>
+
+    <!-- TAB: Current Signal -->
+    <div class="tab-pane active" id="tab-signal">
+      <div class="grid-2">
+        <!-- Left: Market Status + Action -->
+        <div class="card">
+          <div class="card-title">Market Status &amp; Action</div>
+          <div id="maStatus"></div>
+          <div style="margin-top:16px" id="actionBox"></div>
+          <div class="info-row" style="margin-top:12px" id="maDetail"></div>
+        </div>
+        <!-- Right: Momentum Ranking -->
+        <div class="card">
+          <div class="card-title">Momentum Ranking — <span id="rankDate" style="color:#fff"></span></div>
+          <table class="rank-table" id="rankTable"></table>
+        </div>
+      </div>
+
+      <!-- Allocation breakdown -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="card-title">Recommended Allocation (Next Rebalance)</div>
+        <div id="allocationGrid" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:4px"></div>
+      </div>
+    </div>
+
+    <!-- TAB: Backtest Results -->
+    <div class="tab-pane" id="tab-backtest">
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title">Strategy CAGR</div>
+          <div class="stat-value stat-up" id="metCagr">–</div>
+          <div class="stat-sub" id="metPeriod">–</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Final Value</div>
+          <div class="stat-value stat-up" id="metFinal">–</div>
+          <div class="stat-sub" id="metInitial">–</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Max Drawdown</div>
+          <div class="stat-value stat-down" id="metDD">–</div>
+          <div class="stat-sub">Peak-to-trough</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Nifty B&amp;H CAGR</div>
+          <div class="stat-value stat-neutral" id="metNifty">–</div>
+          <div class="stat-sub" id="metNiftyFinal">–</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Portfolio Value vs Nifty Buy &amp; Hold</div>
+        <div class="chart-wrap">
+          <canvas id="portfolioChart"></canvas>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:20px">
+        <div class="card">
+          <div class="card-title">Year-by-Year Performance</div>
+          <div class="chart-wrap" style="height:220px">
+            <canvas id="yearChart"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Monthly Returns Heatmap</div>
+          <div id="heatmapWrap" style="overflow-x:auto"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Rebalance Log -->
+    <div class="tab-pane" id="tab-log">
+      <div class="note">
+        ℹ️ Rebalance happens on the <strong>first trading day of each month</strong>. Only the top-ranked ETFs per the momentum formula are held. Market filter applies.
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+        <input type="text" id="logSearch" placeholder="Filter by ETF or date..." oninput="renderLog()" style="background:#2d3148;border:1px solid var(--border);color:#e2e8f0;padding:7px 14px;border-radius:6px;font-size:0.82rem;width:240px"/>
+        <label style="font-size:0.82rem;color:var(--muted)">
+          <input type="checkbox" id="showCashOnly" onchange="renderLog()" style="margin-right:4px"/> Cash months only
+        </label>
+        <label style="font-size:0.82rem;color:var(--muted)">
+          <input type="checkbox" id="showChangesOnly" onchange="renderLog()" style="margin-right:4px"/> Changes only
+        </label>
+        <span style="margin-left:auto;font-size:0.8rem;color:var(--muted)" id="logCount"></span>
+      </div>
+      <div class="log-wrap" id="logWrap"></div>
+    </div>
+
+  </div><!-- /dashboard -->
+
+</div><!-- /container -->
+
+<script>
+let DATA = null;
+let portfolioChartInst = null;
+let yearChartInst = null;
+
+// ── File Upload ─────────────────────────────────────────────────────────────
+const fileInput = document.getElementById('fileInput');
+const dropZone  = document.getElementById('dropZone');
+const fileList  = document.getElementById('fileList');
+const runBtn    = document.getElementById('runBtn');
+let uploadedFiles = {};
+
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
+
+function handleFiles(files) {
+  Array.from(files).forEach(f => {
+    if (f.name.endsWith('.csv')) {
+      uploadedFiles[f.name] = f;
+    } else if (f.name.endsWith('.json')) {
+      loadResultsFromFile(f); return;
+    }
+  });
+  renderFileList();
+  runBtn.disabled = Object.keys(uploadedFiles).length === 0;
+}
+
+function renderFileList() {
+  fileList.innerHTML = Object.keys(uploadedFiles).map(n =>
+    `<span class="file-tag">${extractETFName(n)}</span>`
+  ).join('');
+}
+
+function extractETFName(filename) {
+  // Try to extract ETF name from NSE filename patterns like "11-11-2021-TO-11-11-2026-BANKBEES-ALL-N.csv"
+  const m = filename.match(/([A-Z]+BEES|NIFTYBEES|BANKBEES|GOLDBEES|SILVERBEES|AUTOBEES|ITBEES|PHARMABEES|INFRABEES|CONSUMBEES)/i);
+  return m ? m[1].toUpperCase() : filename.replace('.csv','');
+}
+
+// ── Parse NSE CSV ────────────────────────────────────────────────────────────
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim());
+  const dateIdx  = headers.findIndex(h => h === 'Date');
+  const closeIdx = headers.findIndex(h => h === 'Close Price');
+  const prices = {};
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split(',').map(c => c.replace(/"/g,'').trim());
+    if (!cols[dateIdx] || !cols[closeIdx]) continue;
+    const dateStr = cols[dateIdx];
+    const price = parseFloat(cols[closeIdx].replace(/,/g,''));
+    if (isNaN(price)) continue;
+    const parts = dateStr.match(/(\d{2})-(\w{3})-(\d{4})/);
+    if (!parts) continue;
+    const months = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+    const d = new Date(parseInt(parts[3]), months[parts[2]], parseInt(parts[1]));
+    prices[d.getTime()] = price;
+  }
+  return prices;
+}
+
+// ── Momentum Score ───────────────────────────────────────────────────────────
+const LOOKBACKS = [{days:63*1.4,w:0.50},{days:126*1.4,w:0.30},{days:252*1.4,w:0.20}];
+
+function getMomentumScore(prices, refTs) {
+  const tsList = Object.keys(prices).map(Number).sort((a,b)=>a-b);
+  const past = tsList.filter(t => t <= refTs);
+  if (!past.length) return null;
+  const currPrice = prices[past[past.length-1]];
+  let score = 0;
+  for (const {days, w} of LOOKBACKS) {
+    const target = refTs - days * 86400000;
+    const old = tsList.filter(t => t <= target);
+    if (!old.length) return null;
+    const oldPrice = prices[old[old.length-1]];
+    score += w * ((currPrice - oldPrice) / oldPrice);
+  }
+  return score * 100;
+}
+
+function get200MA(prices, refTs) {
+  const tsList = Object.keys(prices).map(Number).sort((a,b)=>a-b);
+  const past = tsList.filter(t => t <= refTs);
+  if (past.length < 200) return null;
+  const slice = past.slice(-200);
+  const ma = slice.reduce((s,t) => s + prices[t], 0) / 200;
+  return { price: prices[past[past.length-1]], ma };
+}
+
+function getMonthlyFirstDays(allTs) {
+  const sorted = [...allTs].sort((a,b)=>a-b);
+  const seen = new Set();
+  return sorted.filter(t => {
+    const d = new Date(t); const k = `${d.getFullYear()}-${d.getMonth()}`;
+    if (!seen.has(k)) { seen.add(k); return true; } return false;
+  });
+}
+
+// ── Run Analysis in browser ──────────────────────────────────────────────────
+async function runAnalysis() {
+  runBtn.disabled = true; runBtn.textContent = '⏳ Processing...';
+  const topN = parseInt(document.getElementById('topN').value);
+
+  // Read all CSVs
+  const etfData = {};
+  let niftyData = null;
+  for (const [fname, file] of Object.entries(uploadedFiles)) {
+    const text = await file.text();
+    const name = extractETFName(fname);
+    const prices = parseCSV(text);
+    if (Object.keys(prices).length) {
+      etfData[name] = prices;
+      if (name.toUpperCase().includes('NIFTY')) niftyData = prices;
+    }
+  }
+  if (!niftyData && Object.keys(etfData).length) niftyData = Object.values(etfData)[0];
+
+  // All trading timestamps
+  const allTs = [...new Set(Object.values(etfData).flatMap(p => Object.keys(p).map(Number)))];
+  const rebalDays = getMonthlyFirstDays(allTs);
+
+  // Need 12 months warmup
+  const startTs = Math.min(...allTs) + 365*86400000;
+  const rbDays = rebalDays.filter(t => t >= startTs);
+
+  const INITIAL = 500000;
+  let capital = INITIAL, cash = capital, holdings = {};
+  const portfolioValues = [], rebalanceLog = [];
+  let prevSelected = new Set();
+
+  const firstRbDate = rbDays[0];
+  const niftyTsList = Object.keys(niftyData).map(Number).sort((a,b)=>a-b);
+  const niftyFirstPast = niftyTsList.filter(t => t <= firstRbDate);
+  const niftyBasePrice = niftyData[niftyFirstPast[niftyFirstPast.length-1]];
+
+  for (const rbTs of rbDays) {
+    // Compute scores
+    const scores = {};
+    for (const [name, prices] of Object.entries(etfData)) {
+      const s = getMomentumScore(prices, rbTs);
+      if (s !== null) scores[name] = parseFloat(s.toFixed(2));
+    }
+    const ranked = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+
+    // 200-MA filter
+    const maResult = get200MA(niftyData, rbTs);
+    const bull = maResult ? maResult.price > maResult.ma : true;
+    const selected = bull ? ranked.slice(0, topN).map(r=>r[0]) : [];
+
+    // Liquidate
+    for (const [etf, shares] of Object.entries(holdings)) {
+      const p = etfData[etf]; const ts = Object.keys(p).map(Number).filter(t=>t<=rbTs);
+      if (ts.length) cash += shares * p[Math.max(...ts)];
+    }
+    holdings = {};
+
+    const trades = [];
+    if (selected.length) {
+      const alloc = cash / selected.length;
+      for (const etf of selected) {
+        const p = etfData[etf]; const ts = Object.keys(p).map(Number).filter(t=>t<=rbTs);
+        if (ts.length) {
+          const price = p[Math.max(...ts)];
+          const shares = alloc / price;
+          holdings[etf] = shares; cash -= shares * price;
+          trades.push({etf, action:'BUY', price:parseFloat(price.toFixed(2)), value:parseFloat(alloc.toFixed(2))});
+        }
+      }
+    } else {
+      trades.push({etf:'CASH/LIQUIDBEES', action:'PARK', value:parseFloat(cash.toFixed(2))});
+    }
+
+    // Portfolio value
+    let portVal = cash;
+    for (const [etf, shares] of Object.entries(holdings)) {
+      const p = etfData[etf]; const ts = Object.keys(p).map(Number).filter(t=>t<=rbTs);
+      if (ts.length) portVal += shares * p[Math.max(...ts)];
+    }
+
+    // Nifty BnH
+    const niftyPast = niftyTsList.filter(t=>t<=rbTs);
+    const niftyVal = niftyPast.length ? INITIAL * (niftyData[niftyPast[niftyPast.length-1]] / niftyBasePrice) : INITIAL;
+
+    const d = new Date(rbTs);
+    const dateStr = `${String(d.getDate()).padStart(2,'0')} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]} ${d.getFullYear()}`;
+
+    portfolioValues.push({ date: dateStr, ts: rbTs, value: parseFloat(portVal.toFixed(2)), nifty_bnh: parseFloat(niftyVal.toFixed(2)), in_cash: !selected.length });
+
+    const selectedSet = new Set(selected);
+    rebalanceLog.push({
+      date: dateStr, ts: rbTs,
+      bull_market: bull,
+      nifty_price: maResult ? parseFloat(maResult.price.toFixed(2)) : 0,
+      nifty_200ma: maResult ? parseFloat(maResult.ma.toFixed(2)) : 0,
+      scores: Object.fromEntries(ranked),
+      selected, ranked: ranked.map(r=>({etf:r[0], score:r[1]})),
+      added: selected.filter(e=>!prevSelected.has(e)),
+      removed: [...prevSelected].filter(e=>!selectedSet.has(e)),
+      trades,
+      portfolio_value: parseFloat(portVal.toFixed(2)),
+      nifty_bnh: parseFloat(niftyVal.toFixed(2)),
+    });
+    prevSelected = selectedSet;
+  }
+
+  // Metrics
+  const finalVal = portfolioValues[portfolioValues.length-1]?.value || INITIAL;
+  const nYears = rbDays.length / 12;
+  const cagr = (Math.pow(finalVal/INITIAL, 1/nYears)-1)*100;
+  let peak=INITIAL, maxDD=0;
+  for (const pv of portfolioValues) {
+    if (pv.value > peak) peak = pv.value;
+    const dd = (peak-pv.value)/peak*100;
+    if (dd > maxDD) maxDD = dd;
+  }
+  const niftyFinal = portfolioValues[portfolioValues.length-1]?.nifty_bnh || INITIAL;
+  const niftyCagr = (Math.pow(niftyFinal/INITIAL, 1/nYears)-1)*100;
+
+  // Latest signal
+  const latestTs = Math.max(...allTs);
+  const latestScores = {};
+  for (const [name, prices] of Object.entries(etfData)) {
+    const s = getMomentumScore(prices, latestTs); if (s!==null) latestScores[name]=parseFloat(s.toFixed(2));
+  }
+  const latestRanked = Object.entries(latestScores).sort((a,b)=>b[1]-a[1]);
+  const latestMAResult = get200MA(niftyData, latestTs);
+  const latestBull = latestMAResult ? latestMAResult.price > latestMAResult.ma : true;
+  const ld = new Date(latestTs);
+  const latestDate = `${String(ld.getDate()).padStart(2,'0')} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][ld.getMonth()]} ${ld.getFullYear()}`;
+
+  DATA = {
+    summary: {
+      initial_capital: INITIAL, final_value: parseFloat(finalVal.toFixed(2)),
+      cagr: parseFloat(cagr.toFixed(2)), max_drawdown: parseFloat(maxDD.toFixed(2)),
+      nifty_final: parseFloat(niftyFinal.toFixed(2)), nifty_cagr: parseFloat(niftyCagr.toFixed(2)),
+      n_months: rbDays.length, top_n: topN,
+    },
+    current_signal: {
+      date: latestDate, bull_market: latestBull,
+      nifty_price: latestMAResult?.price, nifty_200ma: latestMAResult?.ma,
+      ranked: latestRanked.map(r=>({etf:r[0],score:r[1]})),
+      recommended: latestBull ? latestRanked.slice(0,topN).map(r=>r[0]) : [],
+      action: latestBull ? 'INVEST' : 'MOVE TO CASH',
+    },
+    portfolio_values: portfolioValues,
+    rebalance_log: rebalanceLog,
+  };
+
+  renderDashboard();
+  runBtn.textContent = '▶ Run Analysis';
+  runBtn.disabled = false;
+}
+
+// ── Load pre-computed results.json ───────────────────────────────────────────
+async function loadResults() {
+  try {
+    const r = await fetch('results.json');
+    if (!r.ok) throw new Error('Not found');
+    DATA = await r.json();
+    renderDashboard();
+  } catch(e) {
+    alert('results.json not found. Please upload CSVs and click "Run Analysis" first.');
+  }
+}
+
+function loadResultsFromFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => { try { DATA = JSON.parse(e.target.result); renderDashboard(); } catch(ex) { alert('Invalid JSON file'); } };
+  reader.readAsText(file);
+}
+
+function rerenderIfLoaded() { if (DATA) { /* topN doesn't affect pre-loaded data */ renderDashboard(); } }
+
+// ── Render Dashboard ─────────────────────────────────────────────────────────
+function renderDashboard() {
+  document.getElementById('dashboard').style.display = 'block';
+  renderSignal();
+  renderMetrics();
+  renderCharts();
+  renderLog();
+}
+
+function fmtCurrency(n) {
+  if (n >= 1e7) return `₹${(n/1e7).toFixed(2)} Cr`;
+  if (n >= 1e5) return `₹${(n/1e5).toFixed(2)} L`;
+  return `₹${n.toLocaleString('en-IN')}`;
+}
+
+// ── Signal Tab ───────────────────────────────────────────────────────────────
+function renderSignal() {
+  const cs = DATA.current_signal;
+  const bull = cs.bull_market;
+
+  document.getElementById('marketBadge').innerHTML = bull
+    ? `<div class="badge bull"><div class="dot"></div>BULL MARKET</div>`
+    : `<div class="badge bear"><div class="dot"></div>BEAR MARKET</div>`;
+
+  const maStatusEl = document.getElementById('maStatus');
+  const pct = cs.nifty_200ma ? ((cs.nifty_price/cs.nifty_200ma-1)*100).toFixed(2) : 0;
+  maStatusEl.innerHTML = `
+    <div class="ma-pill ${bull?'above':'below'}" style="font-size:1rem;padding:8px 14px;margin-bottom:8px">
+      Nifty ${bull?'ABOVE':'BELOW'} 200-Day MA &nbsp;(${pct>0?'+':''}${pct}%)
+    </div>
+    <div class="info-row">
+      <span>Current: <strong>₹${cs.nifty_price?.toFixed(2)||'–'}</strong></span>
+      <div class="sep"></div>
+      <span>200-MA: <strong>₹${cs.nifty_200ma?.toFixed(2)||'–'}</strong></span>
+      <div class="sep"></div>
+      <span style="color:var(--muted)">as of ${cs.date}</span>
+    </div>`;
+
+  document.getElementById('actionBox').innerHTML = `
+    <div class="signal-action ${bull?'invest':'cash'}">
+      ${bull ? '✅ STAY INVESTED — Hold Top ETFs' : '⚠️ BEAR MARKET — Move to Cash / LiquidBees'}
+    </div>`;
+
+  document.getElementById('rankDate').textContent = cs.date;
+
+  // Ranking table
+  const topN = DATA.summary.top_n || 2;
+  const recommended = new Set(cs.recommended || []);
+  let rows = cs.ranked.map((r,i) => {
+    const isTop = recommended.has(r.etf);
+    const score = r.score;
+    const barPct = Math.max(0, Math.min(100, ((score+20)/40)*100));
+    const barColor = score >= 0 ? 'var(--green)' : 'var(--red)';
+    return `<tr class="${isTop&&bull?'top':''}">
+      <td><span class="rank-badge rank-${i<3?i+1:'other'}">${i+1}</span></td>
+      <td><strong>${r.etf}</strong>${isTop&&bull?'<span class="hold-tag">HOLD</span>':''}</td>
+      <td style="color:${score>=0?'var(--green)':'var(--red)'}">${score>=0?'+':''}${score.toFixed(2)}%</td>
+      <td><div class="bar-wrap"><div class="bar-fill" style="width:${barPct}%;background:${barColor}"></div></div></td>
+    </tr>`;
+  }).join('');
+  document.getElementById('rankTable').innerHTML = `
+    <thead><tr><th>#</th><th>ETF</th><th>Momentum Score</th><th>Visual</th></tr></thead>
+    <tbody>${rows}</tbody>`;
+
+  // Allocation cards
+  const alloc = document.getElementById('allocationGrid');
+  if (!bull) {
+    alloc.innerHTML = `<div style="color:var(--red);font-size:0.9rem;padding:12px">Market is in BEAR mode. Recommended: 100% Cash / LiquidBees.</div>`;
+  } else {
+    const pct_each = Math.round(100 / cs.recommended.length);
+    alloc.innerHTML = cs.recommended.map(etf => `
+      <div style="flex:1;min-width:140px;background:#1a1d2e;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px">BUY / HOLD</div>
+        <div style="font-size:1.4rem;font-weight:700;margin:6px 0">${etf}</div>
+        <div style="font-size:1.8rem;font-weight:700;color:var(--accent)">${pct_each}%</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:4px">of portfolio</div>
+      </div>`).join('');
+  }
+}
+
+// ── Metrics Tab ──────────────────────────────────────────────────────────────
+function renderMetrics() {
+  const s = DATA.summary;
+  document.getElementById('metCagr').textContent    = `${s.cagr}%`;
+  document.getElementById('metPeriod').textContent  = `${s.n_months} months backtest`;
+  document.getElementById('metFinal').textContent   = fmtCurrency(s.final_value);
+  document.getElementById('metInitial').textContent = `Started: ${fmtCurrency(s.initial_capital)}`;
+  document.getElementById('metDD').textContent      = `-${s.max_drawdown}%`;
+  document.getElementById('metNifty').textContent   = `${s.nifty_cagr}%`;
+  document.getElementById('metNiftyFinal').textContent = `Final: ${fmtCurrency(s.nifty_final)}`;
+}
+
+// ── Charts ───────────────────────────────────────────────────────────────────
+function renderCharts() {
+  renderPortfolioChart();
+  renderYearChart();
+  renderHeatmap();
+}
+
+function renderPortfolioChart() {
+  const pvs = DATA.portfolio_values;
+  const labels = pvs.map(p=>p.date);
+  const strat  = pvs.map(p=>p.value);
+  const nifty  = pvs.map(p=>p.nifty_bnh);
+
+  if (portfolioChartInst) portfolioChartInst.destroy();
+  const ctx = document.getElementById('portfolioChart').getContext('2d');
+  portfolioChartInst = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels,
+      datasets:[
+        {label:'Strategy',data:strat,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,0.08)',fill:true,tension:0.3,pointRadius:0,borderWidth:2},
+        {label:'Nifty B&H',data:nifty,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.05)',fill:true,tension:0.3,pointRadius:0,borderWidth:1.5,borderDash:[4,4]}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#94a3b8',boxWidth:12}},tooltip:{mode:'index',intersect:false,callbacks:{label:ctx=>`${ctx.dataset.label}: ₹${ctx.raw.toLocaleString('en-IN')}`}}},
+      scales:{
+        x:{ticks:{color:'#4b5563',maxTicksLimit:12},grid:{color:'rgba(75,85,99,0.2)'}},
+        y:{ticks:{color:'#4b5563',callback:v=>fmtCurrency(v)},grid:{color:'rgba(75,85,99,0.2)'}}
+      }
+    }
+  });
+}
+
+function renderYearChart() {
+  const pvs = DATA.portfolio_values;
+  // Group by year
+  const yearData = {};
+  for (let i = 1; i < pvs.length; i++) {
+    const yr = pvs[i].date.split(' ')[2];
+    if (!yearData[yr]) yearData[yr] = { startStrat: pvs[i-1].value, startNifty: pvs[i-1].nifty_bnh };
+    yearData[yr].endStrat = pvs[i].value;
+    yearData[yr].endNifty = pvs[i].nifty_bnh;
+  }
+  const years = Object.keys(yearData).sort();
+  const stratReturns = years.map(y => parseFloat(((yearData[y].endStrat/yearData[y].startStrat-1)*100).toFixed(1)));
+  const niftyReturns = years.map(y => parseFloat(((yearData[y].endNifty/yearData[y].startNifty-1)*100).toFixed(1)));
+
+  if (yearChartInst) yearChartInst.destroy();
+  const ctx = document.getElementById('yearChart').getContext('2d');
+  yearChartInst = new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels:years,
+      datasets:[
+        {label:'Strategy',data:stratReturns,backgroundColor:'rgba(99,102,241,0.7)',borderRadius:4},
+        {label:'Nifty B&H',data:niftyReturns,backgroundColor:'rgba(245,158,11,0.5)',borderRadius:4}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#94a3b8',boxWidth:10}},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw}%`}}},
+      scales:{
+        x:{ticks:{color:'#4b5563'},grid:{display:false}},
+        y:{ticks:{color:'#4b5563',callback:v=>`${v}%`},grid:{color:'rgba(75,85,99,0.2)'}}
+      }
+    }
+  });
+}
+
+function renderHeatmap() {
+  const pvs = DATA.portfolio_values;
+  // Monthly returns
+  const monthMap = {};
+  for (let i=1;i<pvs.length;i++) {
+    const parts = pvs[i].date.split(' ');
+    const mon = parts[1]; const yr = parts[2];
+    const ret = ((pvs[i].value/pvs[i-1].value)-1)*100;
+    if (!monthMap[yr]) monthMap[yr] = {};
+    monthMap[yr][mon] = parseFloat(ret.toFixed(1));
+  }
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const years = Object.keys(monthMap).sort();
+  let html = `<table style="border-collapse:collapse;font-size:0.73rem;width:100%">
+    <thead><tr><th style="padding:4px 6px;color:var(--muted);text-align:left">Year</th>${MONTHS.map(m=>`<th style="padding:4px 3px;color:var(--muted)">${m}</th>`).join('')}</tr></thead>
+    <tbody>`;
+  for (const yr of years) {
+    html += `<tr><td style="padding:4px 6px;font-weight:600;color:#94a3b8">${yr}</td>`;
+    for (const mon of MONTHS) {
+      const v = monthMap[yr]?.[mon];
+      if (v===undefined) { html+='<td></td>'; continue; }
+      const intensity = Math.min(1, Math.abs(v)/20);
+      const bg = v>=0 ? `rgba(34,197,94,${0.1+intensity*0.6})` : `rgba(239,68,68,${0.1+intensity*0.6})`;
+      html+=`<td style="background:${bg};color:#fff;text-align:center;padding:4px 2px;border-radius:3px" title="${mon} ${yr}: ${v}%">${v>0?'+':''}${v}%</td>`;
+    }
+    html+='</tr>';
+  }
+  html+='</tbody></table>';
+  document.getElementById('heatmapWrap').innerHTML = html;
+}
+
+// ── Rebalance Log ────────────────────────────────────────────────────────────
+function renderLog() {
+  const log = DATA.rebalance_log;
+  const search = document.getElementById('logSearch').value.toLowerCase();
+  const cashOnly = document.getElementById('showCashOnly').checked;
+  const changesOnly = document.getElementById('showChangesOnly').checked;
+
+  let filtered = [...log].reverse(); // most recent first
+  if (search) filtered = filtered.filter(e => e.date.toLowerCase().includes(search) || (e.selected||[]).some(s=>s.toLowerCase().includes(search)));
+  if (cashOnly) filtered = filtered.filter(e => !e.bull_market);
+  if (changesOnly) filtered = filtered.filter(e => (e.added?.length||0)+(e.removed?.length||0)>0);
+
+  document.getElementById('logCount').textContent = `${filtered.length} entries`;
+
+  const wrap = document.getElementById('logWrap');
+  if (!filtered.length) { wrap.innerHTML = `<div class="loading">No entries match filters</div>`; return; }
+
+  wrap.innerHTML = filtered.map((entry, idx) => {
+    const bull = entry.bull_market;
+    const changes = (entry.added?.length||0) + (entry.removed?.length||0);
+    const changeIndicator = changes > 0 ? `<span style="background:rgba(245,158,11,0.2);color:#fbbf24;padding:2px 7px;border-radius:4px;font-size:0.7rem;margin-left:6px">${changes} change${changes>1?'s':''}</span>` : '';
+
+    const chips = bull
+      ? `${(entry.selected||[]).map(e=>`<span class="chip ${(entry.added||[]).includes(e)?'added':'hold'}">${e}</span>`).join('')}${(entry.removed||[]).map(e=>`<span class="chip removed">↓ ${e}</span>`).join('')}`
+      : `<span class="chip cash">CASH / LIQUIDBEES</span>`;
+
+    const scoreRows = (entry.ranked||[]).map(r =>
+      `<tr><td>${r.etf}</td><td style="color:${r.score>=0?'var(--green)':'var(--red)'}">${r.score>=0?'+':''}${r.score}%</td><td>${(entry.selected||[]).includes(r.etf)?'<span class="hold-tag">HOLD</span>':''}</td></tr>`
+    ).join('');
+
+    const niftyPct = entry.nifty_200ma ? ((entry.nifty_price/entry.nifty_200ma-1)*100).toFixed(2) : '–';
+
+    return `<div class="log-entry" id="log-${idx}">
+      <div class="log-entry-header" onclick="toggleLog('log-${idx}')">
+        <div>
+          <span class="log-date">${entry.date}</span>
+          ${changeIndicator}
+          <div class="log-chips" style="margin-top:6px">${chips}</div>
+        </div>
+        <div style="text-align:right;min-width:120px">
+          <div style="font-size:0.9rem;font-weight:600">${fmtCurrency(entry.portfolio_value)}</div>
+          <div class="log-value">Nifty: ${fmtCurrency(entry.nifty_bnh)}</div>
+          <div class="ma-pill ${bull?'above':'below'}" style="display:inline-flex;margin-top:4px;font-size:0.68rem">${bull?'▲ Bull':'▼ Bear'}</div>
+        </div>
+      </div>
+      <div class="log-entry-body">
+        <div style="display:flex;gap:20px;flex-wrap:wrap">
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">Momentum Scores</div>
+            <table class="mini-table"><thead><tr><th>ETF</th><th>Score</th><th>Status</th></tr></thead><tbody>${scoreRows}</tbody></table>
+          </div>
+          <div style="min-width:200px">
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">Market Filter</div>
+            <div class="info-row">Nifty: <strong>₹${entry.nifty_price?.toFixed(2)||'–'}</strong></div>
+            <div class="info-row">200-MA: <strong>₹${entry.nifty_200ma?.toFixed(2)||'–'}</strong></div>
+            <div class="info-row">Diff: <strong style="color:${bull?'var(--green)':'var(--red)'}">${niftyPct!=='–'?(bull?'+':'')+niftyPct+'%':niftyPct}</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleLog(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+function switchTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+// Auto-load results.json on page load
+window.addEventListener('load', () => loadResults());
+</script>
+</body>
+</html>

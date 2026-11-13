@@ -1,0 +1,2251 @@
+{
+  "summary": {
+    "initial_capital": 500000,
+    "final_value": 1242124.46,
+    "cagr": 25.54,
+    "max_drawdown": 13.02,
+    "nifty_final": 649138.23,
+    "nifty_cagr": 6.74,
+    "n_months": 48,
+    "top_n": 2
+  },
+  "current_signal": {
+    "date": "11 Nov 2026",
+    "bull_market": true,
+    "nifty_price": 288.22,
+    "nifty_200ma": 272.55,
+    "ranked": [
+      {
+        "etf": "PHARMABEES",
+        "score": 14.55
+      },
+      {
+        "etf": "BANKBEES",
+        "score": 8.92
+      },
+      {
+        "etf": "NIFTYBEES",
+        "score": 3.74
+      },
+      {
+        "etf": "JUNIORBEES",
+        "score": 2.96
+      },
+      {
+        "etf": "ITBEES",
+        "score": 2.01
+      },
+      {
+        "etf": "AUTOBEES",
+        "score": 1.86
+      },
+      {
+        "etf": "INFRABEES",
+        "score": 0.87
+      },
+      {
+        "etf": "CONSUMBEES",
+        "score": 0.84
+      },
+      {
+        "etf": "GOLDBEES",
+        "score": -7.03
+      },
+      {
+        "etf": "SILVERBEES",
+        "score": -17.66
+      }
+    ],
+    "recommended": [
+      "PHARMABEES",
+      "BANKBEES"
+    ],
+    "action": "INVEST"
+  },
+  "portfolio_values": [
+    {
+      "date": "2022-12-01",
+      "value": 500000.0,
+      "nifty_bnh": 500000.0,
+      "in_cash": false
+    },
+    {
+      "date": "2023-01-01",
+      "value": 494224.12,
+      "nifty_bnh": 486646.16,
+      "in_cash": false
+    },
+    {
+      "date": "2023-02-01",
+      "value": 497465.77,
+      "nifty_bnh": 470948.68,
+      "in_cash": false
+    },
+    {
+      "date": "2023-03-01",
+      "value": 458320.48,
+      "nifty_bnh": 463673.65,
+      "in_cash": true
+    },
+    {
+      "date": "2023-04-02",
+      "value": 458320.48,
+      "nifty_bnh": 465211.66,
+      "in_cash": true
+    },
+    {
+      "date": "2023-05-01",
+      "value": 458320.48,
+      "nifty_bnh": 484326.94,
+      "in_cash": false
+    },
+    {
+      "date": "2023-06-01",
+      "value": 458703.52,
+      "nifty_bnh": 497631.95,
+      "in_cash": false
+    },
+    {
+      "date": "2023-07-02",
+      "value": 461247.93,
+      "nifty_bnh": 518285.24,
+      "in_cash": false
+    },
+    {
+      "date": "2023-08-01",
+      "value": 467101.72,
+      "nifty_bnh": 525120.84,
+      "in_cash": false
+    },
+    {
+      "date": "2023-09-03",
+      "value": 476666.37,
+      "nifty_bnh": 526317.07,
+      "in_cash": false
+    },
+    {
+      "date": "2023-10-02",
+      "value": 481050.61,
+      "nifty_bnh": 526268.25,
+      "in_cash": false
+    },
+    {
+      "date": "2023-11-01",
+      "value": 473777.3,
+      "nifty_bnh": 516673.99,
+      "in_cash": false
+    },
+    {
+      "date": "2023-12-03",
+      "value": 525671.27,
+      "nifty_bnh": 557052.88,
+      "in_cash": false
+    },
+    {
+      "date": "2024-01-01",
+      "value": 553584.87,
+      "nifty_bnh": 583980.27,
+      "in_cash": false
+    },
+    {
+      "date": "2024-02-01",
+      "value": 589697.17,
+      "nifty_bnh": 589082.56,
+      "in_cash": false
+    },
+    {
+      "date": "2024-03-01",
+      "value": 621975.42,
+      "nifty_bnh": 603754.7,
+      "in_cash": false
+    },
+    {
+      "date": "2024-04-01",
+      "value": 638231.11,
+      "nifty_bnh": 607026.02,
+      "in_cash": false
+    },
+    {
+      "date": "2024-05-01",
+      "value": 672385.71,
+      "nifty_bnh": 612372.44,
+      "in_cash": false
+    },
+    {
+      "date": "2024-06-02",
+      "value": 714560.84,
+      "nifty_bnh": 630193.84,
+      "in_cash": false
+    },
+    {
+      "date": "2024-07-01",
+      "value": 742979.44,
+      "nifty_bnh": 656779.45,
+      "in_cash": false
+    },
+    {
+      "date": "2024-08-01",
+      "value": 758934.59,
+      "nifty_bnh": 673038.43,
+      "in_cash": false
+    },
+    {
+      "date": "2024-09-01",
+      "value": 773047.67,
+      "nifty_bnh": 687100.24,
+      "in_cash": false
+    },
+    {
+      "date": "2024-10-02",
+      "value": 768125.79,
+      "nifty_bnh": 690127.44,
+      "in_cash": false
+    },
+    {
+      "date": "2024-11-03",
+      "value": 724862.37,
+      "nifty_bnh": 655412.33,
+      "in_cash": false
+    },
+    {
+      "date": "2024-12-01",
+      "value": 697486.1,
+      "nifty_bnh": 662516.48,
+      "in_cash": false
+    },
+    {
+      "date": "2025-01-01",
+      "value": 719416.07,
+      "nifty_bnh": 658878.96,
+      "in_cash": false
+    },
+    {
+      "date": "2025-02-02",
+      "value": 672388.06,
+      "nifty_bnh": 638323.32,
+      "in_cash": true
+    },
+    {
+      "date": "2025-03-02",
+      "value": 672388.06,
+      "nifty_bnh": 605561.25,
+      "in_cash": true
+    },
+    {
+      "date": "2025-04-01",
+      "value": 672388.06,
+      "nifty_bnh": 638738.34,
+      "in_cash": true
+    },
+    {
+      "date": "2025-05-01",
+      "value": 672388.06,
+      "nifty_bnh": 664152.14,
+      "in_cash": false
+    },
+    {
+      "date": "2025-06-01",
+      "value": 684855.53,
+      "nifty_bnh": 677701.28,
+      "in_cash": false
+    },
+    {
+      "date": "2025-07-01",
+      "value": 695102.56,
+      "nifty_bnh": 697671.01,
+      "in_cash": false
+    },
+    {
+      "date": "2025-08-03",
+      "value": 722427.15,
+      "nifty_bnh": 680752.89,
+      "in_cash": false
+    },
+    {
+      "date": "2025-09-01",
+      "value": 769912.5,
+      "nifty_bnh": 677896.59,
+      "in_cash": false
+    },
+    {
+      "date": "2025-10-02",
+      "value": 887740.72,
+      "nifty_bnh": 686392.27,
+      "in_cash": false
+    },
+    {
+      "date": "2025-11-02",
+      "value": 909974.13,
+      "nifty_bnh": 711268.98,
+      "in_cash": false
+    },
+    {
+      "date": "2025-12-01",
+      "value": 1008386.53,
+      "nifty_bnh": 719349.64,
+      "in_cash": false
+    },
+    {
+      "date": "2026-01-01",
+      "value": 1210317.09,
+      "nifty_bnh": 726404.96,
+      "in_cash": false
+    },
+    {
+      "date": "2026-02-01",
+      "value": 1242124.46,
+      "nifty_bnh": 693179.04,
+      "in_cash": true
+    },
+    {
+      "date": "2026-03-01",
+      "value": 1242124.46,
+      "nifty_bnh": 688272.06,
+      "in_cash": true
+    },
+    {
+      "date": "2026-04-01",
+      "value": 1242124.46,
+      "nifty_bnh": 628899.96,
+      "in_cash": true
+    },
+    {
+      "date": "2026-05-03",
+      "value": 1242124.46,
+      "nifty_bnh": 666764.32,
+      "in_cash": true
+    },
+    {
+      "date": "2026-06-01",
+      "value": 1242124.46,
+      "nifty_bnh": 649431.18,
+      "in_cash": true
+    },
+    {
+      "date": "2026-07-01",
+      "value": 1242124.46,
+      "nifty_bnh": 669571.8,
+      "in_cash": true
+    },
+    {
+      "date": "2026-08-02",
+      "value": 1242124.46,
+      "nifty_bnh": 683243.01,
+      "in_cash": true
+    },
+    {
+      "date": "2026-09-01",
+      "value": 1242124.46,
+      "nifty_bnh": 665397.2,
+      "in_cash": true
+    },
+    {
+      "date": "2026-10-04",
+      "value": 1242124.46,
+      "nifty_bnh": 628118.74,
+      "in_cash": true
+    },
+    {
+      "date": "2026-11-01",
+      "value": 1242124.46,
+      "nifty_bnh": 649138.23,
+      "in_cash": true
+    }
+  ],
+  "rebalance_log": [
+    {
+      "date": "01 Dec 2022",
+      "bull_market": true,
+      "nifty_vs_200ma": -24.85,
+      "scores": {
+        "BANKBEES": 15.09,
+        "NIFTYBEES": 9.81,
+        "INFRABEES": 9.75,
+        "CONSUMBEES": 7.37,
+        "GOLDBEES": 6.35,
+        "JUNIORBEES": 5.86,
+        "ITBEES": 5.8,
+        "PHARMABEES": 3.71
+      },
+      "selected": [
+        "BANKBEES",
+        "NIFTYBEES"
+      ],
+      "added": [
+        "BANKBEES",
+        "NIFTYBEES"
+      ],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "BANKBEES",
+          "action": "BUY",
+          "price": 435.61,
+          "shares": 573.9079,
+          "value": 250000.0
+        },
+        {
+          "etf": "NIFTYBEES",
+          "action": "BUY",
+          "price": 204.81,
+          "shares": 1220.6435,
+          "value": 250000.0
+        }
+      ],
+      "portfolio_value": 500000.0,
+      "nifty_bnh": 500000.0
+    },
+    {
+      "date": "01 Jan 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -26.86,
+      "scores": {
+        "BANKBEES": 14.85,
+        "GOLDBEES": 8.74,
+        "INFRABEES": 7.06,
+        "NIFTYBEES": 7.06,
+        "JUNIORBEES": 2.13,
+        "CONSUMBEES": 0.9,
+        "ITBEES": -1.63,
+        "PHARMABEES": -4.29
+      },
+      "selected": [
+        "BANKBEES",
+        "GOLDBEES"
+      ],
+      "added": [
+        "GOLDBEES"
+      ],
+      "removed": [
+        "NIFTYBEES"
+      ],
+      "trades": [
+        {
+          "etf": "BANKBEES",
+          "action": "BUY",
+          "price": 437.18,
+          "shares": 565.241,
+          "value": 247112.06
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 47.17,
+          "shares": 5238.7547,
+          "value": 247112.06
+        }
+      ],
+      "portfolio_value": 494224.12,
+      "nifty_bnh": 486646.16
+    },
+    {
+      "date": "01 Feb 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -29.22,
+      "scores": {
+        "SILVERBEES": 19.27,
+        "GOLDBEES": 15.72,
+        "AUTOBEES": 4.22,
+        "BANKBEES": 3.6,
+        "ITBEES": 2.52,
+        "NIFTYBEES": 0.24,
+        "INFRABEES": -1.75,
+        "CONSUMBEES": -2.55,
+        "PHARMABEES": -7.1,
+        "JUNIORBEES": -8.33
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [
+        "SILVERBEES"
+      ],
+      "removed": [
+        "BANKBEES"
+      ],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 70.6,
+          "shares": 3523.1287,
+          "value": 248732.88
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 50.47,
+          "shares": 4928.3314,
+          "value": 248732.88
+        }
+      ],
+      "portfolio_value": 497465.77,
+      "nifty_bnh": 470948.68
+    },
+    {
+      "date": "01 Mar 2023",
+      "bull_market": false,
+      "nifty_vs_200ma": -30.31,
+      "scores": {
+        "GOLDBEES": 6.5,
+        "SILVERBEES": 3.37,
+        "AUTOBEES": 3.22,
+        "BANKBEES": 0.71,
+        "ITBEES": -2.79,
+        "NIFTYBEES": -3.23,
+        "INFRABEES": -3.68,
+        "CONSUMBEES": -5.89,
+        "PHARMABEES": -8.99,
+        "JUNIORBEES": -12.31
+      },
+      "selected": [],
+      "added": [],
+      "removed": [
+        "GOLDBEES",
+        "SILVERBEES"
+      ],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 458320.4847535873,
+          "value": 458320.48
+        }
+      ],
+      "portfolio_value": 458320.48,
+      "nifty_bnh": 463673.65
+    },
+    {
+      "date": "02 Apr 2023",
+      "bull_market": false,
+      "nifty_vs_200ma": -30.08,
+      "scores": {
+        "GOLDBEES": 9.31,
+        "SILVERBEES": 6.52,
+        "AUTOBEES": 2.07,
+        "BANKBEES": 0.46,
+        "INFRABEES": -1.42,
+        "NIFTYBEES": -1.47,
+        "ITBEES": -2.0,
+        "CONSUMBEES": -4.06,
+        "PHARMABEES": -7.05,
+        "JUNIORBEES": -10.67
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 458320.4847535873,
+          "value": 458320.48
+        }
+      ],
+      "portfolio_value": 458320.48,
+      "nifty_bnh": 465211.66
+    },
+    {
+      "date": "01 May 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -27.21,
+      "scores": {
+        "SILVERBEES": 13.92,
+        "BANKBEES": 10.73,
+        "GOLDBEES": 10.02,
+        "INFRABEES": 6.85,
+        "AUTOBEES": 5.86,
+        "NIFTYBEES": 4.66,
+        "CONSUMBEES": 2.55,
+        "JUNIORBEES": 0.56,
+        "PHARMABEES": -0.68,
+        "ITBEES": -5.43
+      },
+      "selected": [
+        "SILVERBEES",
+        "BANKBEES"
+      ],
+      "added": [
+        "SILVERBEES",
+        "BANKBEES"
+      ],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 72.99,
+          "shares": 3139.6115,
+          "value": 229160.24
+        },
+        {
+          "etf": "BANKBEES",
+          "action": "BUY",
+          "price": 437.85,
+          "shares": 523.3761,
+          "value": 229160.24
+        }
+      ],
+      "portfolio_value": 458320.48,
+      "nifty_bnh": 484326.94
+    },
+    {
+      "date": "01 Jun 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -25.21,
+      "scores": {
+        "AUTOBEES": 15.54,
+        "SILVERBEES": 13.76,
+        "CONSUMBEES": 11.56,
+        "BANKBEES": 11.08,
+        "GOLDBEES": 10.8,
+        "JUNIORBEES": 7.49,
+        "NIFTYBEES": 6.89,
+        "INFRABEES": 6.58,
+        "PHARMABEES": 5.8,
+        "ITBEES": -0.0
+      },
+      "selected": [
+        "AUTOBEES",
+        "SILVERBEES"
+      ],
+      "added": [
+        "AUTOBEES"
+      ],
+      "removed": [
+        "BANKBEES"
+      ],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 145.12,
+          "shares": 1580.4283,
+          "value": 229351.76
+        },
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 71.48,
+          "shares": 3208.6145,
+          "value": 229351.76
+        }
+      ],
+      "portfolio_value": 458703.52,
+      "nifty_bnh": 497631.95
+    },
+    {
+      "date": "02 Jul 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -22.11,
+      "scores": {
+        "AUTOBEES": 21.54,
+        "CONSUMBEES": 14.15,
+        "BANKBEES": 13.97,
+        "INFRABEES": 13.47,
+        "NIFTYBEES": 12.03,
+        "JUNIORBEES": 11.77,
+        "PHARMABEES": 9.72,
+        "ITBEES": 5.28,
+        "SILVERBEES": 2.73,
+        "GOLDBEES": 2.08
+      },
+      "selected": [
+        "AUTOBEES",
+        "CONSUMBEES"
+      ],
+      "added": [
+        "CONSUMBEES"
+      ],
+      "removed": [
+        "SILVERBEES"
+      ],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 152.78,
+          "shares": 1509.5167,
+          "value": 230623.97
+        },
+        {
+          "etf": "CONSUMBEES",
+          "action": "BUY",
+          "price": 91.14,
+          "shares": 2530.4363,
+          "value": 230623.97
+        }
+      ],
+      "portfolio_value": 461247.93,
+      "nifty_bnh": 518285.24
+    },
+    {
+      "date": "01 Aug 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -21.08,
+      "scores": {
+        "PHARMABEES": 20.15,
+        "AUTOBEES": 16.86,
+        "INFRABEES": 14.78,
+        "JUNIORBEES": 11.77,
+        "CONSUMBEES": 10.66,
+        "NIFTYBEES": 9.85,
+        "BANKBEES": 9.06,
+        "SILVERBEES": 5.87,
+        "ITBEES": 4.93,
+        "GOLDBEES": 1.79
+      },
+      "selected": [
+        "PHARMABEES",
+        "AUTOBEES"
+      ],
+      "added": [
+        "PHARMABEES"
+      ],
+      "removed": [
+        "CONSUMBEES"
+      ],
+      "trades": [
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 15.22,
+          "shares": 15344.9974,
+          "value": 233550.86
+        },
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 156.44,
+          "shares": 1492.9101,
+          "value": 233550.86
+        }
+      ],
+      "portfolio_value": 467101.72,
+      "nifty_bnh": 525120.84
+    },
+    {
+      "date": "03 Sep 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -20.9,
+      "scores": {
+        "PHARMABEES": 21.0,
+        "AUTOBEES": 16.8,
+        "INFRABEES": 13.16,
+        "ITBEES": 13.09,
+        "SILVERBEES": 13.03,
+        "JUNIORBEES": 8.99,
+        "NIFTYBEES": 8.87,
+        "CONSUMBEES": 7.55,
+        "BANKBEES": 5.71,
+        "GOLDBEES": 5.24
+      },
+      "selected": [
+        "PHARMABEES",
+        "AUTOBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 15.28,
+          "shares": 15597.7216,
+          "value": 238333.19
+        },
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 162.23,
+          "shares": 1469.1067,
+          "value": 238333.19
+        }
+      ],
+      "portfolio_value": 476666.37,
+      "nifty_bnh": 526317.07
+    },
+    {
+      "date": "02 Oct 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -20.91,
+      "scores": {
+        "AUTOBEES": 16.69,
+        "PHARMABEES": 16.53,
+        "INFRABEES": 14.96,
+        "ITBEES": 9.67,
+        "JUNIORBEES": 8.15,
+        "CONSUMBEES": 7.27,
+        "NIFTYBEES": 6.83,
+        "BANKBEES": 4.38,
+        "SILVERBEES": 0.58,
+        "GOLDBEES": -0.22
+      },
+      "selected": [
+        "AUTOBEES",
+        "PHARMABEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 162.56,
+          "shares": 1479.6094,
+          "value": 240525.3
+        },
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 15.53,
+          "shares": 15487.7852,
+          "value": 240525.3
+        }
+      ],
+      "portfolio_value": 481050.61,
+      "nifty_bnh": 526268.25
+    },
+    {
+      "date": "01 Nov 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -22.35,
+      "scores": {
+        "AUTOBEES": 11.99,
+        "INFRABEES": 7.89,
+        "PHARMABEES": 6.9,
+        "CONSUMBEES": 5.3,
+        "ITBEES": 4.66,
+        "GOLDBEES": 4.18,
+        "JUNIORBEES": 3.29,
+        "NIFTYBEES": 2.15,
+        "SILVERBEES": 0.98,
+        "BANKBEES": -1.1
+      },
+      "selected": [
+        "AUTOBEES",
+        "INFRABEES"
+      ],
+      "added": [
+        "INFRABEES"
+      ],
+      "removed": [
+        "PHARMABEES"
+      ],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 162.25,
+          "shares": 1460.0225,
+          "value": 236888.65
+        },
+        {
+          "etf": "INFRABEES",
+          "action": "BUY",
+          "price": 636.77,
+          "shares": 372.016,
+          "value": 236888.65
+        }
+      ],
+      "portfolio_value": 473777.3,
+      "nifty_bnh": 516673.99
+    },
+    {
+      "date": "03 Dec 2023",
+      "bull_market": true,
+      "nifty_vs_200ma": -16.28,
+      "scores": {
+        "AUTOBEES": 19.93,
+        "INFRABEES": 17.97,
+        "PHARMABEES": 16.71,
+        "JUNIORBEES": 12.4,
+        "CONSUMBEES": 12.3,
+        "NIFTYBEES": 9.12,
+        "ITBEES": 8.65,
+        "GOLDBEES": 8.32,
+        "SILVERBEES": 7.02,
+        "BANKBEES": 5.62
+      },
+      "selected": [
+        "AUTOBEES",
+        "INFRABEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 179.71,
+          "shares": 1462.5543,
+          "value": 262835.64
+        },
+        {
+          "etf": "INFRABEES",
+          "action": "BUY",
+          "price": 707.74,
+          "shares": 371.3732,
+          "value": 262835.64
+        }
+      ],
+      "portfolio_value": 525671.27,
+      "nifty_bnh": 557052.88
+    },
+    {
+      "date": "01 Jan 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -12.23,
+      "scores": {
+        "INFRABEES": 23.99,
+        "PHARMABEES": 22.75,
+        "AUTOBEES": 22.15,
+        "JUNIORBEES": 21.75,
+        "CONSUMBEES": 16.19,
+        "ITBEES": 16.19,
+        "NIFTYBEES": 13.56,
+        "GOLDBEES": 10.76,
+        "BANKBEES": 8.64,
+        "SILVERBEES": 7.68
+      },
+      "selected": [
+        "INFRABEES",
+        "PHARMABEES"
+      ],
+      "added": [
+        "PHARMABEES"
+      ],
+      "removed": [
+        "AUTOBEES"
+      ],
+      "trades": [
+        {
+          "etf": "INFRABEES",
+          "action": "BUY",
+          "price": 755.69,
+          "shares": 366.2778,
+          "value": 276792.43
+        },
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 17.55,
+          "shares": 15771.6486,
+          "value": 276792.43
+        }
+      ],
+      "portfolio_value": 553584.87,
+      "nifty_bnh": 583980.27
+    },
+    {
+      "date": "01 Feb 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -11.46,
+      "scores": {
+        "INFRABEES": 34.99,
+        "JUNIORBEES": 29.36,
+        "AUTOBEES": 27.73,
+        "PHARMABEES": 24.31,
+        "ITBEES": 21.83,
+        "CONSUMBEES": 19.04,
+        "NIFTYBEES": 14.79,
+        "BANKBEES": 6.16,
+        "GOLDBEES": 5.59,
+        "SILVERBEES": 2.89
+      },
+      "selected": [
+        "INFRABEES",
+        "JUNIORBEES"
+      ],
+      "added": [
+        "JUNIORBEES"
+      ],
+      "removed": [
+        "PHARMABEES"
+      ],
+      "trades": [
+        {
+          "etf": "INFRABEES",
+          "action": "BUY",
+          "price": 823.28,
+          "shares": 358.1389,
+          "value": 294848.58
+        },
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 594.92,
+          "shares": 495.6105,
+          "value": 294848.58
+        }
+      ],
+      "portfolio_value": 589697.17,
+      "nifty_bnh": 589082.56
+    },
+    {
+      "date": "01 Mar 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -9.26,
+      "scores": {
+        "INFRABEES": 33.35,
+        "AUTOBEES": 32.87,
+        "JUNIORBEES": 31.82,
+        "PHARMABEES": 28.47,
+        "ITBEES": 19.73,
+        "CONSUMBEES": 18.02,
+        "NIFTYBEES": 14.91,
+        "BANKBEES": 6.75,
+        "GOLDBEES": 3.77,
+        "SILVERBEES": -3.03
+      },
+      "selected": [
+        "INFRABEES",
+        "AUTOBEES"
+      ],
+      "added": [
+        "AUTOBEES"
+      ],
+      "removed": [
+        "JUNIORBEES"
+      ],
+      "trades": [
+        {
+          "etf": "INFRABEES",
+          "action": "BUY",
+          "price": 856.49,
+          "shares": 363.0956,
+          "value": 310987.71
+        },
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 213.02,
+          "shares": 1459.8991,
+          "value": 310987.71
+        }
+      ],
+      "portfolio_value": 621975.42,
+      "nifty_bnh": 603754.7
+    },
+    {
+      "date": "01 Apr 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -8.77,
+      "scores": {
+        "AUTOBEES": 33.23,
+        "JUNIORBEES": 31.74,
+        "INFRABEES": 30.05,
+        "PHARMABEES": 24.06,
+        "CONSUMBEES": 17.06,
+        "GOLDBEES": 13.96,
+        "NIFTYBEES": 11.92,
+        "ITBEES": 8.25,
+        "SILVERBEES": 6.11,
+        "BANKBEES": 4.17
+      },
+      "selected": [
+        "AUTOBEES",
+        "JUNIORBEES"
+      ],
+      "added": [
+        "JUNIORBEES"
+      ],
+      "removed": [
+        "INFRABEES"
+      ],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 219.77,
+          "shares": 1452.0433,
+          "value": 319115.56
+        },
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 662.72,
+          "shares": 481.524,
+          "value": 319115.56
+        }
+      ],
+      "portfolio_value": 638231.11,
+      "nifty_bnh": 607026.02
+    },
+    {
+      "date": "01 May 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -7.96,
+      "scores": {
+        "JUNIORBEES": 34.69,
+        "AUTOBEES": 33.35,
+        "INFRABEES": 27.02,
+        "PHARMABEES": 21.29,
+        "CONSUMBEES": 17.78,
+        "GOLDBEES": 15.61,
+        "NIFTYBEES": 11.98,
+        "SILVERBEES": 10.83,
+        "BANKBEES": 9.67,
+        "ITBEES": 0.85
+      },
+      "selected": [
+        "JUNIORBEES",
+        "AUTOBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 700.57,
+          "shares": 479.8847,
+          "value": 336192.85
+        },
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 230.74,
+          "shares": 1457.0203,
+          "value": 336192.85
+        }
+      ],
+      "portfolio_value": 672385.71,
+      "nifty_bnh": 612372.44
+    },
+    {
+      "date": "02 Jun 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -5.29,
+      "scores": {
+        "JUNIORBEES": 33.12,
+        "AUTOBEES": 29.39,
+        "INFRABEES": 26.29,
+        "SILVERBEES": 23.5,
+        "CONSUMBEES": 14.16,
+        "GOLDBEES": 13.62,
+        "PHARMABEES": 13.59,
+        "NIFTYBEES": 10.37,
+        "BANKBEES": 9.46,
+        "ITBEES": -2.51
+      },
+      "selected": [
+        "JUNIORBEES",
+        "AUTOBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 750.2,
+          "shares": 476.2469,
+          "value": 357280.42
+        },
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 243.34,
+          "shares": 1468.2355,
+          "value": 357280.42
+        }
+      ],
+      "portfolio_value": 714560.84,
+      "nifty_bnh": 630193.84
+    },
+    {
+      "date": "01 Jul 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -1.29,
+      "scores": {
+        "AUTOBEES": 32.03,
+        "JUNIORBEES": 30.7,
+        "INFRABEES": 22.12,
+        "CONSUMBEES": 16.6,
+        "SILVERBEES": 14.99,
+        "PHARMABEES": 14.49,
+        "NIFTYBEES": 12.68,
+        "BANKBEES": 10.96,
+        "ITBEES": 9.81,
+        "GOLDBEES": 9.59
+      },
+      "selected": [
+        "AUTOBEES",
+        "JUNIORBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 256.99,
+          "shares": 1445.5415,
+          "value": 371489.72
+        },
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 767.79,
+          "shares": 483.8429,
+          "value": 371489.72
+        }
+      ],
+      "portfolio_value": 742979.44,
+      "nifty_bnh": 656779.45
+    },
+    {
+      "date": "01 Aug 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": 1.15,
+      "scores": {
+        "AUTOBEES": 30.17,
+        "JUNIORBEES": 27.86,
+        "PHARMABEES": 21.84,
+        "INFRABEES": 21.44,
+        "CONSUMBEES": 20.83,
+        "ITBEES": 18.99,
+        "NIFTYBEES": 15.25,
+        "SILVERBEES": 11.57,
+        "BANKBEES": 10.13,
+        "GOLDBEES": 6.8
+      },
+      "selected": [
+        "AUTOBEES",
+        "JUNIORBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "AUTOBEES",
+          "action": "BUY",
+          "price": 262.98,
+          "shares": 1442.9511,
+          "value": 379467.29
+        },
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 782.87,
+          "shares": 484.713,
+          "value": 379467.29
+        }
+      ],
+      "portfolio_value": 758934.59,
+      "nifty_bnh": 673038.43
+    },
+    {
+      "date": "01 Sep 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": 3.27,
+      "scores": {
+        "JUNIORBEES": 26.59,
+        "ITBEES": 26.4,
+        "PHARMABEES": 25.8,
+        "AUTOBEES": 22.96,
+        "CONSUMBEES": 20.93,
+        "INFRABEES": 19.13,
+        "NIFTYBEES": 15.24,
+        "BANKBEES": 7.41,
+        "GOLDBEES": 6.29,
+        "SILVERBEES": 3.53
+      },
+      "selected": [
+        "JUNIORBEES",
+        "ITBEES"
+      ],
+      "added": [
+        "ITBEES"
+      ],
+      "removed": [
+        "AUTOBEES"
+      ],
+      "trades": [
+        {
+          "etf": "JUNIORBEES",
+          "action": "BUY",
+          "price": 802.49,
+          "shares": 481.6556,
+          "value": 386523.83
+        },
+        {
+          "etf": "ITBEES",
+          "action": "BUY",
+          "price": 45.98,
+          "shares": 8406.347,
+          "value": 386523.83
+        }
+      ],
+      "portfolio_value": 773047.67,
+      "nifty_bnh": 687100.24
+    },
+    {
+      "date": "02 Oct 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": 3.72,
+      "scores": {
+        "PHARMABEES": 23.46,
+        "CONSUMBEES": 22.75,
+        "JUNIORBEES": 21.39,
+        "AUTOBEES": 20.62,
+        "ITBEES": 19.44,
+        "INFRABEES": 13.54,
+        "NIFTYBEES": 12.02,
+        "GOLDBEES": 8.7,
+        "SILVERBEES": 8.0,
+        "BANKBEES": 5.5
+      },
+      "selected": [
+        "PHARMABEES",
+        "CONSUMBEES"
+      ],
+      "added": [
+        "PHARMABEES",
+        "CONSUMBEES"
+      ],
+      "removed": [
+        "ITBEES",
+        "JUNIORBEES"
+      ],
+      "trades": [
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 23.58,
+          "shares": 16287.6547,
+          "value": 384062.9
+        },
+        {
+          "etf": "CONSUMBEES",
+          "action": "BUY",
+          "price": 139.04,
+          "shares": 2762.2475,
+          "value": 384062.9
+        }
+      ],
+      "portfolio_value": 768125.79,
+      "nifty_bnh": 690127.44
+    },
+    {
+      "date": "03 Nov 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -1.5,
+      "scores": {
+        "SILVERBEES": 17.57,
+        "PHARMABEES": 17.17,
+        "ITBEES": 14.79,
+        "GOLDBEES": 14.17,
+        "JUNIORBEES": 10.49,
+        "CONSUMBEES": 8.38,
+        "BANKBEES": 7.28,
+        "NIFTYBEES": 7.02,
+        "AUTOBEES": 6.6,
+        "INFRABEES": 5.39
+      },
+      "selected": [
+        "SILVERBEES",
+        "PHARMABEES"
+      ],
+      "added": [
+        "SILVERBEES"
+      ],
+      "removed": [
+        "CONSUMBEES"
+      ],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 92.25,
+          "shares": 3928.7933,
+          "value": 362431.18
+        },
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 23.12,
+          "shares": 15676.0892,
+          "value": 362431.18
+        }
+      ],
+      "portfolio_value": 724862.37,
+      "nifty_bnh": 655412.33
+    },
+    {
+      "date": "01 Dec 2024",
+      "bull_market": true,
+      "nifty_vs_200ma": -0.43,
+      "scores": {
+        "ITBEES": 13.51,
+        "PHARMABEES": 10.97,
+        "GOLDBEES": 8.74,
+        "SILVERBEES": 6.7,
+        "JUNIORBEES": 5.67,
+        "CONSUMBEES": 4.11,
+        "BANKBEES": 3.82,
+        "NIFTYBEES": 2.68,
+        "INFRABEES": 1.63,
+        "AUTOBEES": 0.31
+      },
+      "selected": [
+        "ITBEES",
+        "PHARMABEES"
+      ],
+      "added": [
+        "ITBEES"
+      ],
+      "removed": [
+        "SILVERBEES"
+      ],
+      "trades": [
+        {
+          "etf": "ITBEES",
+          "action": "BUY",
+          "price": 46.74,
+          "shares": 7461.3404,
+          "value": 348743.05
+        },
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 22.93,
+          "shares": 15209.0297,
+          "value": 348743.05
+        }
+      ],
+      "portfolio_value": 697486.1,
+      "nifty_bnh": 662516.48
+    },
+    {
+      "date": "01 Jan 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": -0.97,
+      "scores": {
+        "ITBEES": 12.38,
+        "PHARMABEES": 11.78,
+        "GOLDBEES": 6.31,
+        "CONSUMBEES": 2.21,
+        "BANKBEES": 0.81,
+        "NIFTYBEES": 0.12,
+        "JUNIORBEES": -0.49,
+        "SILVERBEES": -0.57,
+        "AUTOBEES": -0.66,
+        "INFRABEES": -2.94
+      },
+      "selected": [
+        "ITBEES",
+        "PHARMABEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "ITBEES",
+          "action": "BUY",
+          "price": 47.6,
+          "shares": 7556.8915,
+          "value": 359708.03
+        },
+        {
+          "etf": "PHARMABEES",
+          "action": "BUY",
+          "price": 23.95,
+          "shares": 15019.1246,
+          "value": 359708.03
+        }
+      ],
+      "portfolio_value": 719416.07,
+      "nifty_bnh": 658878.96
+    },
+    {
+      "date": "02 Feb 2025",
+      "bull_market": false,
+      "nifty_vs_200ma": -4.06,
+      "scores": {
+        "GOLDBEES": 15.31,
+        "SILVERBEES": 10.31,
+        "ITBEES": 5.7,
+        "CONSUMBEES": 2.29,
+        "AUTOBEES": -1.23,
+        "PHARMABEES": -1.63,
+        "NIFTYBEES": -1.96,
+        "BANKBEES": -2.23,
+        "INFRABEES": -7.64,
+        "JUNIORBEES": -8.63
+      },
+      "selected": [],
+      "added": [],
+      "removed": [
+        "PHARMABEES",
+        "ITBEES"
+      ],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 672388.0638114411,
+          "value": 672388.06
+        }
+      ],
+      "portfolio_value": 672388.06,
+      "nifty_bnh": 638323.32
+    },
+    {
+      "date": "02 Mar 2025",
+      "bull_market": false,
+      "nifty_vs_200ma": -8.99,
+      "scores": {
+        "GOLDBEES": 16.64,
+        "SILVERBEES": 11.07,
+        "BANKBEES": -5.51,
+        "NIFTYBEES": -7.51,
+        "PHARMABEES": -8.55,
+        "CONSUMBEES": -9.41,
+        "ITBEES": -9.63,
+        "AUTOBEES": -12.14,
+        "INFRABEES": -12.37,
+        "JUNIORBEES": -16.88
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 672388.0638114411,
+          "value": 672388.06
+        }
+      ],
+      "portfolio_value": 672388.06,
+      "nifty_bnh": 605561.25
+    },
+    {
+      "date": "01 Apr 2025",
+      "bull_market": false,
+      "nifty_vs_200ma": -4.0,
+      "scores": {
+        "GOLDBEES": 19.04,
+        "SILVERBEES": 12.27,
+        "BANKBEES": 1.84,
+        "NIFTYBEES": -2.06,
+        "INFRABEES": -3.4,
+        "PHARMABEES": -5.49,
+        "CONSUMBEES": -5.91,
+        "JUNIORBEES": -8.38,
+        "AUTOBEES": -10.89,
+        "ITBEES": -11.18
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 672388.0638114411,
+          "value": 672388.06
+        }
+      ],
+      "portfolio_value": 672388.06,
+      "nifty_bnh": 638738.34
+    },
+    {
+      "date": "01 May 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": -0.18,
+      "scores": {
+        "GOLDBEES": 19.11,
+        "BANKBEES": 9.97,
+        "NIFTYBEES": 3.75,
+        "INFRABEES": 3.39,
+        "SILVERBEES": 3.39,
+        "PHARMABEES": 2.21,
+        "CONSUMBEES": -0.15,
+        "JUNIORBEES": -2.43,
+        "AUTOBEES": -5.25,
+        "ITBEES": -9.58
+      },
+      "selected": [
+        "GOLDBEES",
+        "BANKBEES"
+      ],
+      "added": [
+        "GOLDBEES",
+        "BANKBEES"
+      ],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 78.91,
+          "shares": 4260.4744,
+          "value": 336194.03
+        },
+        {
+          "etf": "BANKBEES",
+          "action": "BUY",
+          "price": 564.11,
+          "shares": 595.9725,
+          "value": 336194.03
+        }
+      ],
+      "portfolio_value": 672388.06,
+      "nifty_bnh": 664152.14
+    },
+    {
+      "date": "01 Jun 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 1.85,
+      "scores": {
+        "GOLDBEES": 20.03,
+        "BANKBEES": 11.33,
+        "NIFTYBEES": 6.9,
+        "INFRABEES": 6.47,
+        "CONSUMBEES": 5.55,
+        "SILVERBEES": 4.77,
+        "PHARMABEES": 3.54,
+        "AUTOBEES": 3.47,
+        "JUNIORBEES": 2.82,
+        "ITBEES": -4.12
+      },
+      "selected": [
+        "GOLDBEES",
+        "BANKBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 80.52,
+          "shares": 4252.7045,
+          "value": 342427.76
+        },
+        {
+          "etf": "BANKBEES",
+          "action": "BUY",
+          "price": 573.52,
+          "shares": 597.0633,
+          "value": 342427.76
+        }
+      ],
+      "portfolio_value": 684855.53,
+      "nifty_bnh": 677701.28
+    },
+    {
+      "date": "01 Jul 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 4.86,
+      "scores": {
+        "GOLDBEES": 17.95,
+        "SILVERBEES": 16.01,
+        "BANKBEES": 11.73,
+        "INFRABEES": 10.64,
+        "NIFTYBEES": 9.0,
+        "AUTOBEES": 7.45,
+        "CONSUMBEES": 7.4,
+        "JUNIORBEES": 5.44,
+        "ITBEES": 5.42,
+        "PHARMABEES": 3.83
+      },
+      "selected": [
+        "GOLDBEES",
+        "SILVERBEES"
+      ],
+      "added": [
+        "SILVERBEES"
+      ],
+      "removed": [
+        "BANKBEES"
+      ],
+      "trades": [
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 81.11,
+          "shares": 4284.9375,
+          "value": 347551.28
+        },
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 102.7,
+          "shares": 3384.141,
+          "value": 347551.28
+        }
+      ],
+      "portfolio_value": 695102.56,
+      "nifty_bnh": 697671.01
+    },
+    {
+      "date": "03 Aug 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 2.31,
+      "scores": {
+        "SILVERBEES": 20.24,
+        "GOLDBEES": 14.09,
+        "BANKBEES": 6.97,
+        "INFRABEES": 3.95,
+        "CONSUMBEES": 3.55,
+        "NIFTYBEES": 3.2,
+        "JUNIORBEES": 2.63,
+        "PHARMABEES": 2.46,
+        "AUTOBEES": 1.27,
+        "ITBEES": -7.92
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 108.09,
+          "shares": 3341.7853,
+          "value": 361213.58
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 83.23,
+          "shares": 4339.9444,
+          "value": 361213.58
+        }
+      ],
+      "portfolio_value": 722427.15,
+      "nifty_bnh": 680752.89
+    },
+    {
+      "date": "01 Sep 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 1.88,
+      "scores": {
+        "SILVERBEES": 24.16,
+        "GOLDBEES": 17.07,
+        "AUTOBEES": 12.14,
+        "CONSUMBEES": 8.61,
+        "INFRABEES": 2.92,
+        "BANKBEES": 2.74,
+        "NIFTYBEES": 2.49,
+        "JUNIORBEES": 1.63,
+        "PHARMABEES": 1.37,
+        "ITBEES": -6.19
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 117.91,
+          "shares": 3264.8312,
+          "value": 384956.25
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 86.61,
+          "shares": 4444.709,
+          "value": 384956.25
+        }
+      ],
+      "portfolio_value": 769912.5,
+      "nifty_bnh": 677896.59
+    },
+    {
+      "date": "02 Oct 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 3.16,
+      "scores": {
+        "SILVERBEES": 46.82,
+        "GOLDBEES": 29.29,
+        "AUTOBEES": 16.8,
+        "CONSUMBEES": 5.44,
+        "BANKBEES": 3.74,
+        "NIFTYBEES": 2.83,
+        "JUNIORBEES": 2.02,
+        "INFRABEES": 1.76,
+        "PHARMABEES": 0.19,
+        "ITBEES": -8.59
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 139.76,
+          "shares": 3175.947,
+          "value": 443870.36
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 97.07,
+          "shares": 4572.6832,
+          "value": 443870.36
+        }
+      ],
+      "portfolio_value": 887740.72,
+      "nifty_bnh": 686392.27
+    },
+    {
+      "date": "02 Nov 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 6.9,
+      "scores": {
+        "SILVERBEES": 44.85,
+        "GOLDBEES": 29.48,
+        "AUTOBEES": 15.98,
+        "INFRABEES": 9.01,
+        "CONSUMBEES": 8.98,
+        "BANKBEES": 8.55,
+        "JUNIORBEES": 8.23,
+        "NIFTYBEES": 7.19,
+        "PHARMABEES": 4.59,
+        "ITBEES": -0.51
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 142.47,
+          "shares": 3193.564,
+          "value": 454987.06
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 100.05,
+          "shares": 4547.5968,
+          "value": 454987.06
+        }
+      ],
+      "portfolio_value": 909974.13,
+      "nifty_bnh": 711268.98
+    },
+    {
+      "date": "01 Dec 2025",
+      "bull_market": true,
+      "nifty_vs_200ma": 8.11,
+      "scores": {
+        "SILVERBEES": 55.79,
+        "GOLDBEES": 31.62,
+        "AUTOBEES": 12.88,
+        "BANKBEES": 8.81,
+        "INFRABEES": 6.95,
+        "NIFTYBEES": 5.61,
+        "PHARMABEES": 4.76,
+        "CONSUMBEES": 4.24,
+        "JUNIORBEES": 1.44,
+        "ITBEES": 0.83
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 165.34,
+          "shares": 3049.4331,
+          "value": 504193.26
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 105.63,
+          "shares": 4773.2014,
+          "value": 504193.26
+        }
+      ],
+      "portfolio_value": 1008386.53,
+      "nifty_bnh": 719349.64
+    },
+    {
+      "date": "01 Jan 2026",
+      "bull_market": true,
+      "nifty_vs_200ma": 9.17,
+      "scores": {
+        "SILVERBEES": 95.07,
+        "GOLDBEES": 33.38,
+        "AUTOBEES": 15.48,
+        "BANKBEES": 10.45,
+        "INFRABEES": 8.93,
+        "NIFTYBEES": 7.03,
+        "ITBEES": 5.11,
+        "JUNIORBEES": 4.64,
+        "CONSUMBEES": 4.16,
+        "PHARMABEES": 3.8
+      },
+      "selected": [
+        "SILVERBEES",
+        "GOLDBEES"
+      ],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "SILVERBEES",
+          "action": "BUY",
+          "price": 221.87,
+          "shares": 2727.5366,
+          "value": 605158.55
+        },
+        {
+          "etf": "GOLDBEES",
+          "action": "BUY",
+          "price": 111.82,
+          "shares": 5411.899,
+          "value": 605158.55
+        }
+      ],
+      "portfolio_value": 1210317.09,
+      "nifty_bnh": 726404.96
+    },
+    {
+      "date": "01 Feb 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 4.18,
+      "scores": {
+        "SILVERBEES": 84.48,
+        "GOLDBEES": 34.52,
+        "AUTOBEES": 8.6,
+        "BANKBEES": 6.51,
+        "ITBEES": 6.34,
+        "NIFTYBEES": 2.08,
+        "INFRABEES": 1.66,
+        "JUNIORBEES": 1.15,
+        "PHARMABEES": -0.85,
+        "CONSUMBEES": -3.26
+      },
+      "selected": [],
+      "added": [],
+      "removed": [
+        "GOLDBEES",
+        "SILVERBEES"
+      ],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 693179.04
+    },
+    {
+      "date": "01 Mar 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 3.44,
+      "scores": {
+        "SILVERBEES": 107.81,
+        "GOLDBEES": 49.73,
+        "BANKBEES": 8.52,
+        "AUTOBEES": 8.12,
+        "JUNIORBEES": 4.6,
+        "PHARMABEES": 4.51,
+        "INFRABEES": 3.71,
+        "NIFTYBEES": 0.69,
+        "CONSUMBEES": -4.05,
+        "ITBEES": -16.12
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 688272.06
+    },
+    {
+      "date": "01 Apr 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": -5.48,
+      "scores": {
+        "SILVERBEES": 41.5,
+        "GOLDBEES": 21.17,
+        "PHARMABEES": -0.5,
+        "INFRABEES": -6.43,
+        "AUTOBEES": -7.5,
+        "JUNIORBEES": -8.19,
+        "BANKBEES": -9.16,
+        "NIFTYBEES": -9.31,
+        "CONSUMBEES": -11.46,
+        "ITBEES": -14.7
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 628899.96
+    },
+    {
+      "date": "03 May 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 0.21,
+      "scores": {
+        "SILVERBEES": 41.95,
+        "GOLDBEES": 15.42,
+        "PHARMABEES": 6.5,
+        "JUNIORBEES": 2.68,
+        "INFRABEES": 0.63,
+        "AUTOBEES": -2.14,
+        "CONSUMBEES": -3.75,
+        "NIFTYBEES": -5.28,
+        "BANKBEES": -6.21,
+        "ITBEES": -19.35
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 666764.32
+    },
+    {
+      "date": "01 Jun 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": -2.39,
+      "scores": {
+        "SILVERBEES": 43.59,
+        "GOLDBEES": 15.72,
+        "PHARMABEES": 5.88,
+        "JUNIORBEES": 3.73,
+        "INFRABEES": -0.72,
+        "AUTOBEES": -1.69,
+        "CONSUMBEES": -3.79,
+        "NIFTYBEES": -6.39,
+        "ITBEES": -7.23,
+        "BANKBEES": -7.72
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 649431.18
+    },
+    {
+      "date": "01 Jul 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 0.63,
+      "scores": {
+        "SILVERBEES": 17.4,
+        "PHARMABEES": 13.51,
+        "JUNIORBEES": 10.77,
+        "GOLDBEES": 8.76,
+        "AUTOBEES": 7.46,
+        "BANKBEES": 5.92,
+        "INFRABEES": 4.72,
+        "CONSUMBEES": 4.65,
+        "NIFTYBEES": 0.43,
+        "ITBEES": -18.99
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 669571.8
+    },
+    {
+      "date": "02 Aug 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 2.69,
+      "scores": {
+        "PHARMABEES": 15.21,
+        "AUTOBEES": 10.41,
+        "SILVERBEES": 8.87,
+        "JUNIORBEES": 6.66,
+        "CONSUMBEES": 4.01,
+        "GOLDBEES": 3.62,
+        "BANKBEES": 1.51,
+        "INFRABEES": 0.41,
+        "NIFTYBEES": -0.24,
+        "ITBEES": -0.93
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 683243.01
+    },
+    {
+      "date": "01 Sep 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": 0.0,
+      "scores": {
+        "PHARMABEES": 14.56,
+        "AUTOBEES": 6.87,
+        "JUNIORBEES": 6.8,
+        "SILVERBEES": 5.24,
+        "BANKBEES": 4.26,
+        "GOLDBEES": 3.61,
+        "CONSUMBEES": 3.47,
+        "ITBEES": 1.77,
+        "INFRABEES": 1.19,
+        "NIFTYBEES": 0.6
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 665397.2
+    },
+    {
+      "date": "04 Oct 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": -5.6,
+      "scores": {
+        "PHARMABEES": 10.34,
+        "SILVERBEES": 4.84,
+        "GOLDBEES": 4.0,
+        "JUNIORBEES": -0.28,
+        "BANKBEES": -3.4,
+        "AUTOBEES": -4.71,
+        "ITBEES": -4.73,
+        "INFRABEES": -5.66,
+        "CONSUMBEES": -5.91,
+        "NIFTYBEES": -6.53
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 628118.74
+    },
+    {
+      "date": "01 Nov 2026",
+      "bull_market": false,
+      "nifty_vs_200ma": -2.44,
+      "scores": {
+        "PHARMABEES": 8.61,
+        "ITBEES": 3.31,
+        "BANKBEES": -3.57,
+        "GOLDBEES": -4.04,
+        "INFRABEES": -4.59,
+        "JUNIORBEES": -5.07,
+        "NIFTYBEES": -5.23,
+        "CONSUMBEES": -7.02,
+        "AUTOBEES": -8.62,
+        "SILVERBEES": -16.07
+      },
+      "selected": [],
+      "added": [],
+      "removed": [],
+      "trades": [
+        {
+          "etf": "CASH/LIQUIDBEES",
+          "action": "PARK",
+          "price": 1,
+          "shares": 1242124.4571954757,
+          "value": 1242124.46
+        }
+      ],
+      "portfolio_value": 1242124.46,
+      "nifty_bnh": 649138.23
+    }
+  ]
+}
